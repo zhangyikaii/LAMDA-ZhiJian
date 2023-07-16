@@ -1,0 +1,126 @@
+addins:
+  - {
+    name: Adapter, 
+    location: [[blocks, 0, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 0, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 1, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 1, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 2, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 2, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 3, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 3, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 4, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 4, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 5, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 5, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 6, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 6, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 7, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 7, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 8, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 8, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 9, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 9, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 10, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 10, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 11, drop_path1]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: Adapter, 
+    location: [[blocks, 11, drop_path2]], 
+    hook: [[adapt, post]]
+    }
+
+reuse_keys:
+  - [addin]
+  - [head]
+  - [fc_norm]

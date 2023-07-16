@@ -1,0 +1,8 @@
+addins:
+  - {
+    name: Addin, 
+    location: [[fc_norm]], 
+    hook: [[get_post, post]]
+    }
+
+reuse_keys: []

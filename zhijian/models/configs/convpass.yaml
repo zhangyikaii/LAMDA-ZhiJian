@@ -1,0 +1,131 @@
+addins:
+  - {
+    name: Convpass, 
+    location: [[blocks, 0, norm1], [blocks, 0, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 0, norm2], [blocks, 0, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 1, norm1], [blocks, 1, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 1, norm2], [blocks, 1, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 2, norm1], [blocks, 2, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 2, norm2], [blocks, 2, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 3, norm1], [blocks, 3, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 3, norm2], [blocks, 3, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 4, norm1], [blocks, 4, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 4, norm2], [blocks, 4, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 5, norm1], [blocks, 5, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 5, norm2], [blocks, 5, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 6, norm1], [blocks, 6, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 6, norm2], [blocks, 6, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 7, norm1], [blocks, 7, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 7, norm2], [blocks, 7, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 8, norm1], [blocks, 8, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 8, norm2], [blocks, 8, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 9, norm1], [blocks, 9, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 9, norm2], [blocks, 9, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 10, norm1], [blocks, 10, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 10, norm2], [blocks, 10, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 11, norm1], [blocks, 11, drop_path1]],
+    hook: [[get_post, post], [adapt, post]]
+    }
+  - {
+    name: Convpass, 
+    location: [[blocks, 11, norm2], [blocks, 11, drop_path2]],
+    hook: [[get_pre, pre], [adapt, post]]
+    }
+
+convpass_dim: 8
+convpass_scale: 0.01
+convpass_drop_path: 0
+convpass_xavier_init: true
+
+reuse_keys:
+  - [addin]
+  - [head]
+  - [fc_norm]
