@@ -4,7 +4,6 @@
 
 &nbsp;
 
-
 <div align="center">
     <img src="https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=for-the-badge" alt="Generic badge", height="23">
     <img src="https://img.shields.io/github/actions/workflow/status/zhangyikaii/LAMDA-ZhiJian/tests.yml?branch=main&style=for-the-badge" alt="GitHub Workflow Status (branch)", height="23">
@@ -26,231 +25,243 @@
     <p>
 </h4>
 
-**ZhiJian** ([**执简**驭繁](https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81)) is a PyTorch-based lightweight framework for **reusing pre-trained models and transferring them to new datasets**. It offers a unified and flexible solution for popular methods such as *regularization* based, *parameter-efficient transfer learning* based, *feature reuse* based, *knowledge distillation* based, and *model merging* based.
+**ZhiJian** ([**执简**驭繁](https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81)) is a PyTorch-based lightweight framework for **reusing pre-trained models (PTMs) and transferring them to new datasets**. It aims to leverage the knowledge encoded within the architecture and weights of a PTM.
 
-ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **The provided interface methods include**:
+It provides a *unifying* and *flexible* solution for various methods of reusing PTMs, including **regularization**-based approaches, **parameter-efficient** fine-tuning, **feature** reuse techniques, **knowledge distillation** methods, and **model merging** strategies. It covers a wide range of fields and offers comprehensive support for *interlocking PTMs, fine-tuning, and merging them together*.
 
-+ **R**egularization via Pre-Trained Parameters
+🔥 **ZhiJian** achieves state-of-the-art capabilities with a **REUSE** parts. **The provided interface methods include**:
+
+<details>
+<summary style="margin-left: 2px;"><b>R</b>egularization via Pre-Trained Parameters</summary>
   <details>
-  <summary style="margin-left: 10px;"><strong>L<sup>2</sup> penalty / L<sup>2</sup>-SP</strong>, <em>Explicit Inductive Bias for Transfer Learning with Convolutional Networks.</em> In: ICML'18. <a href="https://arxiv.org/pdf/1802.01483.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>L<sup>2</sup> penalty / L<sup>2</sup>-SP</strong>, <em>Explicit Inductive Bias for Transfer Learning with Convolutional Networks.</em> In: ICML'18. <a href="https://arxiv.org/pdf/1802.01483.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Spectral Norm</strong>, <em>Spectral Normalization for Generative Adversarial Networks.</em> In: ICLR'18. <a href="https://arxiv.org/pdf/1802.05957.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Spectral Norm</strong>, <em>Spectral Normalization for Generative Adversarial Networks.</em> In: ICLR'18. <a href="https://arxiv.org/pdf/1802.05957.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Optimal Transport Based</strong>, <em>Trading beams for bandwidth: Imaging with randomized beamforming.</em> In: ICML'19. <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Learning_Debiased_Representations_via_Conditional_Attribute_Interpolation_CVPR_2023_paper.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>BSS</strong>, <em>Catastrophic Forgetting Meets Negative Transfer: Batch Spectral Shrinkage for Safe Transfer Learning.</em> In: NeurIPS'19. <a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/c6bff625bdb0393992c9d4db0c6bbe45-Paper.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>BSS</strong>, <em>Catastrophic Forgetting Meets Negative Transfer: Batch Spectral Shrinkage for Safe Transfer Learning.</em> In: NeurIPS'19. <a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/c6bff625bdb0393992c9d4db0c6bbe45-Paper.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>DELTA</strong>, <em>DELTA: DEep Learning Transfer using Feature Map with Attention for Convolutional Networks.</em> In: ICLR'19. <a href="https://arxiv.org/pdf/1901.09229.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>DELTA</strong>, <em>DELTA: DEep Learning Transfer using Feature Map with Attention for Convolutional Networks.</em> In: ICLR'19. <a href="https://arxiv.org/pdf/1901.09229.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Elastic Weight Consolidation</strong>, <em>Overcoming catastrophic forgetting in neural networks.</em> In: PNAS'17. <a href="https://arxiv.org/pdf/1612.00796.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <div style="margin-left: 30px;">
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+  </div>
+  </details>
+</details>
+
+<details>
+<summary style="margin-left: 2px;"><b>E</b>fficient Tuning with Transferred Addin-like Parameters</summary>
+  <details>
+  <summary style="margin-left: 12px;"><strong>LoRA</strong>, <em>LoRA: Low-Rank Adaptation of Large Language Models.</em> In: ICLR'22. <a href="https://arxiv.org/pdf/2106.09685.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Elastic Weight Consolidation</strong>, <em>Overcoming catastrophic forgetting in neural networks.</em> In: PNAS'17. <a href="https://arxiv.org/pdf/1612.00796.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-  <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-  </div>
-  </details>
-
-+ **E**fficient Tuning with Transferred Addin-like Parameters
-  <details>
-  <summary style="margin-left: 10px;"><strong>LoRA</strong>, <em>LoRA: Low-Rank Adaptation of Large Language Models.</em> In: ICLR'22. <a href="https://arxiv.org/pdf/2106.09685.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Adapter</strong>, <em>Parameter-Efficient Transfer Learning for NLP.</em> In: ICML'19. <a href="https://arxiv.org/pdf/1902.00751.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Adapter</strong>, <em>Parameter-Efficient Transfer Learning for NLP.</em> In: ICML'19. <a href="https://arxiv.org/pdf/1902.00751.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Diff Pruning</strong>, <em>Parameter-Efficient Transfer Learning with Diff Pruning.</em> In: ACL'21. <a href="https://arxiv.org/pdf/2012.07463.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Visual Prompt Tuning / Prefix</strong>, <em>Visual Prompt Tuning.</em> In: ECCV'22. <a href="https://arxiv.org/pdf/2203.12119.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Visual Prompt Tuning / Prefix</strong>, <em>Visual Prompt Tuning.</em> In: ECCV'22. <a href="https://arxiv.org/pdf/2203.12119.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Convpass</strong>, <em>Convolutional Bypasses Are Better Vision Transformer Adapters.</em> In: Tech Report 07-2022. <a href="https://arxiv.org/pdf/2207.07039.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Convpass</strong>, <em>Convolutional Bypasses Are Better Vision Transformer Adapters.</em> In: Tech Report 07-2022. <a href="https://arxiv.org/pdf/2207.07039.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Scaling &amp; Shifting</strong>, <em>Scaling &amp; Shifting Your Features: A New Baseline for Efficient Model Tuning.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2210.08823.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Scaling &amp; Shifting</strong>, <em>Scaling &amp; Shifting Your Features: A New Baseline for Efficient Model Tuning.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2210.08823.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>AdaptFormer</strong>, <em>AdaptFormer: Adapting Vision Transformers for Scalable Visual Recognition.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2205.13535.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>AdaptFormer</strong>, <em>AdaptFormer: Adapting Vision Transformers for Scalable Visual Recognition.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2205.13535.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Fact-Tuning</strong>, <em>FacT: Factor-Tuning for Lightweight Adaptation on Vision Transformer.</em> In: AAAI'23. <a href="https://arxiv.org/pdf/2212.03145.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Fact-Tuning</strong>, <em>FacT: Factor-Tuning for Lightweight Adaptation on Vision Transformer.</em> In: AAAI'23. <a href="https://arxiv.org/pdf/2212.03145.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
-
-+ **U**tilization of Pre-Trained Features and Partial Backbones
+  
   <details>
-  <summary style="margin-left: 10px;"><strong>Linear Probing</strong>, <em>Parameter-Efficient Transfer Learning for NLP.</em> In: ICML'19. <a href="https://arxiv.org/pdf/1902.00751.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-  <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-  </div>
+    <summary style="margin-left: 12px;"><strong>VQT</strong>, <em>Visual Query Tuning: Towards Effective Usage of Intermediate Representations for Parameter and Memory Efficient Transfer Learning.</em> In: CVPR'23. <a href="https://arxiv.org/pdf/2212.03220.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+    <div style="margin-left: 30px;">
+      <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    </div>
   </details>
+</details>
 
+<details>
+<summary style="margin-left: 2px;"><b>U</b>tilization of Pre-Trained Features and Partial Backbones</summary>
   <details>
-  <summary style="margin-left: 10px;"><strong>Partial-k</strong>, <em>How transferable are features in deep neural networks?</em> In: NeurIPS'14. <a href="https://arxiv.org/pdf/1411.1792.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-  <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-  </div>
-  </details>
-
-  <details>
-  <summary style="margin-left: 10px;"><strong>Nearest Class Mean</strong>, <em>Parameter-Efficient Transfer Learning for NLP.</em> In: ICML'19. <a href="https://arxiv.org/pdf/1902.00751.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Linear Probing</strong>, <em>Parameter-Efficient Transfer Learning for NLP.</em> In: ICML'19. <a href="https://arxiv.org/pdf/1902.00751.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>SimpleShot</strong>, <em>SimpleShot: Revisiting Nearest-Neighbor Classification for Few-Shot Learning.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1911.04623.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Partial-k</strong>, <em>How transferable are features in deep neural networks?</em> In: NeurIPS'14. <a href="https://arxiv.org/pdf/1411.1792.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>BitFit</strong>, <em>BitFit: Simple Parameter-efficient Fine-tuning for Transformer-based Masked Language-models.</em> In: ACL'22. <a href="https://arxiv.org/pdf/2106.10199.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Nearest Class Mean</strong>, <em>Generalizing to new classes at near-zero cost.</em> In: TPAMI'13. <a href="https://ieeexplore.ieee.org/document/6517188">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Diff Pruning</strong>, <em>Parameter-Efficient Transfer Learning with Diff Pruning.</em> In: ACL'21. <a href="https://arxiv.org/pdf/2012.07463.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-  <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-  </div>
-  </details>
-
-+ **S**upervisions from Pre-Trained Predictions
-  <details>
-  <summary style="margin-left: 10px;"><strong>Vanilla Knowledge Distillation / LwF</strong>, <em>Learning without Memorizing.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1811.08051.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>SimpleShot</strong>, <em>SimpleShot: Revisiting Nearest-Neighbor Classification for Few-Shot Learning.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1911.04623.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>FitNet</strong>, <em>FitNets: Hints for Thin Deep Nets.</em> In: ICLR'15. <a href="https://arxiv.org/pdf/1412.6550.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>BitFit</strong>, <em>BitFit: Simple Parameter-efficient Fine-tuning for Transformer-based Masked Language-models.</em> In: ACL'22. <a href="https://arxiv.org/pdf/2106.10199.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>FSP</strong>, <em>A Gift from Knowledge Distillation: Fast Optimization, Network Minimization and Transfer Learning.</em> In: CVPR'17. <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Yim_A_Gift_From_CVPR_2017_paper.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>Head2Toe</strong>, <em>Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2201.03529.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <div style="margin-left: 30px;">
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+  </div>
+  </details>
+</details>
+
+<details>
+<summary style="margin-left: 2px;"><b>S</b>upervisions from Pre-Trained</summary>
+  <details>
+  <summary style="margin-left: 12px;"><strong>Vanilla Knowledge Distillation / LwF</strong>, <em>Learning without Memorizing.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1811.08051.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>NST</strong>, <em>Like What You Like: Knowledge Distill via Neuron Selectivity Transfer.</em> In: CVPR'17. <a href="https://arxiv.org/pdf/1707.01219.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>FitNet</strong>, <em>FitNets: Hints for Thin Deep Nets.</em> In: ICLR'15. <a href="https://arxiv.org/pdf/1412.6550.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>RKD</strong>, <em>Relational Knowledge Distillation.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1412.6550.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>FSP</strong>, <em>A Gift from Knowledge Distillation: Fast Optimization, Network Minimization and Transfer Learning.</em> In: CVPR'17. <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Yim_A_Gift_From_CVPR_2017_paper.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>SPKD</strong>, <em>Similarity-Preserving Knowledge Distillation.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1907.09682.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>NST</strong>, <em>Like What You Like: Knowledge Distill via Neuron Selectivity Transfer.</em> In: CVPR'17. <a href="https://arxiv.org/pdf/1707.01219.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>CRD</strong>, <em>Contrastive Representation Distillation.</em> In: ICLR'20. <a href="https://arxiv.org/pdf/1910.10699.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>RKD</strong>, <em>Relational Knowledge Distillation.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1412.6550.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>REFILLED</strong>, <em>Distilling Cross-Task Knowledge via Relationship Matching.</em> In: CVPR'20. <a href="http://www.lamda.nju.edu.cn/lus/files/CVPR20_ReFilled.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-  <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-  </div>
-  </details>
-
-+ **E**nsembling and Merging Multiple Models
-  <details>
-  <summary style="margin-left: 10px;"><strong>Model Soup:</strong> <em>averaging weights of multiple fine-tuned models improves accuracy without increasing inference time.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2203.05482.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>SPKD</strong>, <em>Similarity-Preserving Knowledge Distillation.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1907.09682.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>WiSE-FT</strong>, <em>Robust fine-tuning of zero-shot models.</em> In: CVPR'22. <a href="https://arxiv.org/pdf/2109.01903.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>CRD</strong>, <em>Contrastive Representation Distillation.</em> In: ICLR'20. <a href="https://arxiv.org/pdf/1910.10699.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 10px;"><strong>Head2Toe</strong>, <em>Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2201.03529.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>REFILLED</strong>, <em>Distilling Cross-Task Knowledge via Relationship Matching.</em> In: CVPR'20. <a href="http://www.lamda.nju.edu.cn/lus/files/CVPR20_ReFilled.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <div style="margin-left: 30px;">
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+  </div>
+  </details>
+</details>
+
+<details>
+<summary style="margin-left: 2px;"><b>E</b>nsembling and Merging Multiple Models</summary>
+  <details>
+  <summary style="margin-left: 12px;"><strong>Model Soup:</strong> <em>averaging weights of multiple fine-tuned models improves accuracy without increasing inference time.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2203.05482.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
+  <details>
+  <summary style="margin-left: 12px;"><strong>WiSE-FT</strong>, <em>Robust fine-tuning of zero-shot models.</em> In: CVPR'22. <a href="https://arxiv.org/pdf/2109.01903.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <div style="margin-left: 30px;">
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+  </div>
+  </details>
 
+</details>
 
+&nbsp;
 
 💡 **ZhiJian** also has the following **highlights**:
 
-+ Support access to any of the **pre-trained model zoo**, including:
++ Support reuse of any **pre-trained model zoo**, including:
   + 🤗Hugging Face series — [PyTorch Image Models (timm)](https://github.com/huggingface/pytorch-image-models), [Transformers](https://github.com/huggingface/transformers)
   + PyTorch series — [Torchvision](https://pytorch.org/vision/stable/models.html)
   + OpenAI series — [CLIP](https://github.com/openai/CLIP)
@@ -270,7 +281,7 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
   + Support both [TensorBoard](https://www.tensorflow.org/tensorboard) and [W&B](https://wandb.ai/) log tools [[here]](TODO) (文档tutorial链接)
 
 
-> "Zhijian" in Chinese means handling complexity with concise and efficient methods. Given the variations in pre-trained models and the deployment overhead of full parameter fine-tuning, Zhijian represents a solution that is easily reusable, maintains high accuracy, and maximizes the potential of pre-trained models.
+> "ZhiJian" in Chinese means handling complexity with concise and efficient methods. Given the variations in pre-trained models and the deployment overhead of full parameter fine-tuning, ZhiJian represents a solution that is easily reusable, maintains high accuracy, and maximizes the potential of pre-trained models.
 > 
 > “执简驭繁”的意思是用简洁高效的方法驾驭纷繁复杂的事物。“繁”表示现有预训练模型和复用方法种类多、差异大、部署难，所以取名"执简"的意思是通过该工具包，能轻松地驾驭模型复用方法，易上手、快复用、稳精度，最大限度地唤醒预训练模型的知识。
 
@@ -303,13 +314,14 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
 
 ## Documentation
 
-📚 The tutorials and API documentation are hosted on [ZhiJian.readthedocs.io](https://ZhiJian.readthedocs.io/)
+📚 The tutorials and API documentation are hosted on [ZhiJian.readthedocs.io](https://zhijian.readthedocs.io/)
+
+中文文档正在搭建中..
 
 &nbsp;
 
 ## Why ZhiJian?
 
-### 🎯 Concise things do big
 
 ![overview](assests/overview.png)
 
@@ -318,46 +330,27 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
     <td colspan="9" style="border-bottom: 2px solid black;"></td>
   </tr>
   <tr>
-    <td><b>Model Reuse Framework</b></td>
+    <td><b>Related Library</b></td>
     <td><b>GitHub Stars</b></td>
-    <td><b>Unified View</b></td>
     <td><b># of Alg.<sup>(1)</sup></b></td>
-    <td><b># of Backbone<sup>(1)</sup></b></td>
+    <td><b># of Model<sup>(1)</sup></b></td>
     <td><b># of Dataset<sup>(1)</sup></b></td>
-    <td><b>LLM Support</b></td>
-    <td><b>Documentation</b></td>
+    <td><b># of Fields<sup>(2)</sup></b></td>
+    <td><b>LLM Supp.</b></td>
+    <td><b>Docs.</b></td>
     <td><b>Last Update</b></td>
   </tr>
-  <tr><td colspan="9" align="left"><b>Regularization via Pre-Trained Parameters</b></td></tr>
-  <tr>
-    <td><a href="https://github.com/thuml/Transfer-Learning-Library">Transfer Learning Library</a></td>
-    <td><a href="https://github.com/thuml/Transfer-Learning-Library/stargazers">
-      <img src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library" alt="GitHub stars">
-    </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>7</td>
-    <td>2 of Resnet-based</td>
-    <td>10</td>
-    <td>TD</td>
-    <td>TD</td>
-    <td>
-    <a>
-      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/thuml/Transfer-Learning-Library?label=last%20update">
-    </a>
-    </td>
-  </tr>
-  <tr><td colspan="9" align="left"><b>Efficient Tuning with Transferred Addin-like Parameters</b></td></tr>
   <tr>
     <td><a href="https://github.com/huggingface/peft">PEFT</a></td>
     <td><a href="https://github.com/huggingface/peft/stargazers">
       <img src="https://img.shields.io/github/stars/huggingface/peft" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>5</td>
-    <td>32</td>
+    <td>6</td>
+    <td>~15</td>
     <td>➖<sup>(3)</sup></td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>1<sup>(a)</sup></td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>
     <a>
       <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/huggingface/peft?label=last%20update">
@@ -369,80 +362,77 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
     <td><a href="https://github.com/adapter-hub/adapter-transformers/stargazers">
       <img src="https://img.shields.io/github/stars/adapter-hub/adapter-transformers" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>11</td>
-    <td>17</td>
+    <td>10</td>
+    <td>~15</td>
     <td>➖<sup>(3)</sup></td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>1<sup>(a)</sup></td>
+    <td>❌</td>
+    <td>✔️</td>
     <td>
     <a>
       <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/adapter-hub/adapter-transformers?label=last%20update">
     </a>
     </td>
   </tr>
-  <tr><td colspan="9" align="left"><b>Utilization of Pre-Trained Features and Partial Backbones</b></td></tr>
   <tr>
-    <td><a href="https://github.com/sicara/easy-few-shot-learning">Easy Few-Shot Learning</a></td>
-    <td><a href="https://github.com/sicara/easy-few-shot-learning/stargazers">
-      <img src="https://img.shields.io/github/stars/sicara/easy-few-shot-learning" alt="GitHub stars">
+    <td><a href="https://github.com/hiyouga/LLaMA-Efficient-Tuning">LLaMA-Efficient-Tuning</a></td>
+    <td><a href="https://github.com/hiyouga/LLaMA-Efficient-Tuning/stargazers">
+      <img src="https://img.shields.io/github/stars/hiyouga/LLaMA-Efficient-Tuning" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>11</td>
-    <td>➖<sup>(3)</sup></td>
-    <td>4</td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>4</sup></td>
+    <td>5</td>
+    <td>~20</td>
+    <td>1<sup>(a)</sup></td>
+    <td>✔️</td>
+    <td>❌</td>
     <td>
     <a>
-      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/sicara/easy-few-shot-learning?label=last%20update">
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hiyouga/LLaMA-Efficient-Tuning?label=last%20update">
     </a></td>
   </tr>
-  <tr><td colspan="9" align="left"><b>Supervisions from Pre-Trained Predictions</b></td></tr>
   <tr>
     <td><a href="https://github.com/AberHu/Knowledge-Distillation-Zoo">Knowledge-Distillation-Zoo</a></td>
     <td><a href="https://github.com/AberHu/Knowledge-Distillation-Zoo/stargazers">
       <img src="https://img.shields.io/github/stars/AberHu/Knowledge-Distillation-Zoo" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>21</td>
+    <td>20</td>
     <td>2</td>
     <td>2</td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>1<sup>(b)</sup></td>
+    <td>❌</td>
+    <td>❌</td>
     <td>
     <a>
       <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/AberHu/Knowledge-Distillation-Zoo?label=last%20update">
     </a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/G-U-N/PyCIL">PyCIL</a></td>
-    <td><a href="https://github.com/G-U-N/PyCIL/stargazers">
-      <img src="https://img.shields.io/github/stars/G-U-N/PyCIL" alt="GitHub stars">
+    <td><a href="https://github.com/sicara/easy-few-shot-learning">Easy Few-Shot Learning</a></td>
+    <td><a href="https://github.com/sicara/easy-few-shot-learning/stargazers">
+      <img src="https://img.shields.io/github/stars/sicara/easy-few-shot-learning" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>12</td>
-    <td>➖<sup>(3)</sup></td>
+    <td>10</td>
     <td>3</td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>2</td>
+    <td>1<sup>(c)</sup></td>
+    <td>❌</td>
+    <td>❌</td>
     <td>
     <a>
-      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/G-U-N/PyCIL?label=last%20update">
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/sicara/easy-few-shot-learning?label=last%20update">
     </a></td>
   </tr>
-  <tr><td colspan="9" align="left"><b>Ensembling and Merging Multiple Models</b></td></tr>
   <tr>
     <td><a href="https://github.com/mlfoundations/model-soups">Model soups</a></td>
     <td><a href="https://github.com/mlfoundations/model-soups/stargazers">
       <img src="https://img.shields.io/github/stars/mlfoundations/model-soups" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>➖<sup>(3)</sup></td>
-    <td>3 of Clip based</td>
-    <td>6</td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>3</sup></td>
+    <td>3</td>
+    <td>5</td>
+    <td>1<sup>(d)</sup></td>
+    <td>❌</td>
+    <td>❌</td>
     <td>
     <a>
       <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mlfoundations/model-soups?label=last%20update">
@@ -453,12 +443,12 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
     <td><a href="https://github.com/samuela/git-re-basin/stargazers">
       <img src="https://img.shields.io/github/stars/samuela/git-re-basin" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
-    <td>➖<sup>(3)</sup></td>
+    <td>3</sup></td>
     <td>5</td>
     <td>4</td>
-    <td>TD</td>
-    <td>TD</td>
+    <td>1<sup>(d)</sup></td>
+    <td>❌</td>
+    <td>❌</td>
     <td>
     <a>
       <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/samuela/git-re-basin?label=last%20update">
@@ -473,7 +463,7 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
     <td><a href="https://github.com/adapter-hub/adapter-transformers/stargazers">
       <img src="https://img.shields.io/github/stars/adapter-hub/adapter-transformers" alt="GitHub stars">
     </a></td>
-    <td>✔️/❌/➖<sup>(2)</sup></td>
+    <td>TD</td>
     <td>TD</td>
     <td>TD</td>
     <td>TD</td>
@@ -484,6 +474,9 @@ ZhiJian achieves state-of-the-art model capabilities with a REUSE workflow. **Th
 
 </table>
 
+
+<sup><b>(1)</b>: access date: 2023-7-17</sup>
+<sup><b>(2)</b>: fields for (a) parameter-efficient fine-tuning; (b) knowledge distillation; (c) feature-based; (d) regularization-based (e) model merging</sup>
 
 ### 📦 Reproducible SoTA Results
 

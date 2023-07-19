@@ -236,7 +236,7 @@ def get_dataset(name, data_path, train_transform, val_transform, logger=None):
         num_classes = 397
     elif name in ['OfficeHome', 'PACS', 'DomainNet', 'VLCS']:
         if name == 'OfficeHome':
-            raise Exception('train test 未划分')
+            raise Exception('train test do not split')
             from udatasets.officehome import OfficeHome
             cur_dataset_class = OfficeHome
             domains = ["Art", "Clipart", "Product", "Real World"]

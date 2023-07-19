@@ -75,6 +75,11 @@ class Trainer(object):
 
         self.args = args
 
+        total = sum([param.nelement() for param in self.model.parameters()])
+        trainable_params = filter(lambda p: p.requires_grad, self.model.parameters())
+        trainable = sum(p.nelement() for p in trainable_params)
+        self.logger.info("Trainable/total parameters of the model: %.2fM / %.2fM (%.5f%%)" % (trainable/1e6, total/1e6, trainable / total * 100))
+
 
     def fit(self):
         if self.only_do_test:
@@ -165,6 +170,6 @@ class Trainer(object):
                     pbar.set_description(('%11s' * 2 + '%11.4g' * 3) %
                                          (f'{epoch + 1}/{self.max_epoch}', mem, batch_time_m.avg, acc1_m.avg, acc5_m.avg))
 
-        self.logger.info(f'***   Best results: [Acc@1: {acc1_m.avg}], [Acc5: {acc5_m.avg}]')
+        self.logger.info(f'***   Best results: [Acc@1: {acc1_m.avg}], [Acc@5: {acc5_m.avg}]')
 
         return acc1_m.avg, acc5_m.avg

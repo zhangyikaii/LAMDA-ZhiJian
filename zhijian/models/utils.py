@@ -148,7 +148,8 @@ def set_gpu(x, space_hold=1000):
             gpu_available += space
         if gpu_available < space_hold:
             gpu_available = 0
-            time.sleep(1800) # 间隔30分钟.
+            raise Exception
+            time.sleep(1800)
     gpu_state(x)
 
 
@@ -396,7 +397,6 @@ class PrepareFunc(object):
         self.args = args
 
     def prepare_optimizer(self, model):
-        # TODO: 抽取 params group
         def set_optimizer(cur_type, cur_encoder):
             if cur_type == 'adam':
                 return optim.Adam(

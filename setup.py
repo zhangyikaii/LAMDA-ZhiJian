@@ -5,7 +5,7 @@ setup(
     version='0.0.1',
     description='ZhiJian: A Unifying and Rapidly Deployable Toolbox for Pre-trained Model Reuse',
     author='ZhiJian Contributors',
-    author_email='',
-    packages=['zhijian', 'zhijian.models', 'zhijian.trainers', 'zhijian.data'],
+    author_email='yumzhangyk@gmail.com',
+    packages=find_packages(),
     install_requires=[],
 )

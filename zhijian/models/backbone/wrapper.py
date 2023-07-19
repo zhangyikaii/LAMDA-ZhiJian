@@ -32,15 +32,3 @@ class ModelWrapper():
         if hasattr(self.model, 'input_callback'):
             return self.model.input_callback()
         return input
-
-    #     # 在linear层之后添加"OK"字符串
-    #     linear_layer_index = -1
-    #     for idx, module in enumerate(self.modules()):
-    #         if isinstance(module, torch.nn.Linear):
-    #             linear_layer_index = idx
-
-    #     if linear_layer_index != -1:
-    #         model_info = model_info.replace('\n', f' --> OK\n', linear_layer_index)
-
-    #     return model_info
-

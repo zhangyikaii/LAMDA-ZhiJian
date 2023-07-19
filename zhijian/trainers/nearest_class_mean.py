@@ -122,6 +122,6 @@ class Trainer(Base_Trainer):
                     pbar.set_description(('%11s' * 2 + '%11.4g' * 3) %
                                          (f'{epoch + 1}/{self.max_epoch}', mem, batch_time_m.avg, acc1_m.avg, acc5_m.avg))
 
-        self.logger.info(f'***   Best results: [Acc@1: {acc1_m.avg}], [Acc5: {acc5_m.avg}]')
+        self.logger.info(f'***   Best results: [Acc@1: {acc1_m.avg}], [Acc@5: {acc5_m.avg}]')
 
         return acc1_m.avg, acc5_m.avg

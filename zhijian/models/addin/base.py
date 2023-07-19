@@ -93,6 +93,8 @@ def addin_config_compile(input_str):
 
     addins = []
     for cur_input_str in input_str_copied:
+        if ':' not in cur_input_str:
+            _compile_error()
         sub_input_str_1, sub_input_str_2 = cur_input_str.split(':')[0].strip(), cur_input_str.split(':')[1].strip()
 
         match_first_bracket = re.search(r'\((.*?)\)', sub_input_str_1)

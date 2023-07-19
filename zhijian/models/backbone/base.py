@@ -44,9 +44,11 @@ def prepare_gradient(reuse_keys, model, logger=None):
             cur_module = get_module_from_location(model, i_loc)
             cur_reuse_keys.extend(['.'.join([f'{i}' for i in i_loc]) + f'.{i}' for i, _ in cur_module.named_parameters()])
     elif isinstance(reuse_keys, list) and len(reuse_keys) == 0:
-        logger.info(f"All parameters are frozen")
+        if logger is not None:
+            logger.info(f"All parameters are frozen")
     else:
-        logger.info(f"All parameters are fine-tunable")
+        if logger is not None:
+            logger.info(f"All parameters are fine-tunable")
         cur_reuse_keys.extend([i for i, _ in model.named_parameters()])
         cur_reuse_modules = [i for i, _ in model.named_children()]
 
@@ -283,9 +285,7 @@ def prepare_model(args, logger=None, **kwargs):
         model = ModelWrapper(model)
 
     model_args = dict2args(model_args)
-    if logger is not None:
-        total = sum([param.nelement() for param in model.parameters()])
-        logger.info("Total parameters of the model: %.2fM" % (total/1e6))
+
     return model, model_args
 
 

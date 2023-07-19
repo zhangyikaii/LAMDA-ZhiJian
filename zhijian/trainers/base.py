@@ -140,20 +140,20 @@ def prepare_args(args, parser=None, update_default=False):
             update_args(backbone_parser_fn)
 
     yaml_params = {}
-    if os.path.isfile(args.config):
+    if hasattr(args, 'config') and os.path.isfile(args.config):
         with open(args.config, 'r') as f:
             yaml_params = yaml.safe_load(f)
 
-    addins = yaml_params.get('addins', [])
+    args.addins = yaml_params.get('addins', [])
 
-    if args.config_blitz is not None and not addins:
+    if args.config_blitz is not None and not args.addins:
         cur_config_blitz = [i.strip() for i in args.config_blitz.split(',')]
         for cur_s in cur_config_blitz:
-            addins.extend(addin_config_compile(cur_s))
+            args.addins.extend(addin_config_compile(cur_s))
 
     if parser is not None or (parser is None and update_default):
         flag_first_prepare_parser = {}
-        for cur_addin in addins:
+        for cur_addin in args.addins:
             cur_addin_name = cur_addin['name']
             if cur_addin_name in flag_first_prepare_parser.keys():
                 continue
@@ -176,17 +176,18 @@ def prepare_args(args, parser=None, update_default=False):
         if hasattr(args, k):
             params_overwrite_from_yaml.append(k)
         setattr(args, k, v)
-    args.addins = addins
 
-    if args.reuse_keys_blitz is not None and not args.reuse_keys:
+    if hasattr(args, 'reuse_keys_blitz') and args.reuse_keys_blitz is not None:
+        if not hasattr(args, 'reuse_keys') or args.reuse_keys is None:
+            args.reuse_keys = []
         cur_reuse_keys_blitz = [i.strip() for i in args.reuse_keys_blitz.split(',')]
         for cur_s in cur_reuse_keys_blitz:
-            args.reuse_keys.extend(reuse_keys_config_compile(cur_s))  
+            args.reuse_keys.extend(reuse_keys_config_compile(cur_s))
     if args.only_do_test:
         args.reuse_keys = []
         args.max_epoch = 1
 
-    if args.time_str == '':
+    if not hasattr(args, 'time_str') or args.time_str == '':
         args.time_str = datetime.datetime.now().strftime('%m%d-%H-%M-%S-%f')[:-3]
 
     if args.training_mode in ['knowledge_distillation', 'regularization']:
@@ -199,6 +200,9 @@ def prepare_args(args, parser=None, update_default=False):
         for k in ['dataset']:
             if k not in t_yaml_params.keys():
                 setattr(args.t_args, k, getattr(args, k))
+
+    if not hasattr(args, 'pretrained_url'):
+        args.pretrained_url = []
 
     if 'llm' in args.training_mode:
         args.model_args, args.data_args, args.training_args, args.finetuning_args = prepare_llm_args(args, stage="sft")
