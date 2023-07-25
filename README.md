@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="http://zhijian.readthedocs.io"><img width="256px" height="auto" src="https://github.com/zhangyikaii/LAMDA-ZhiJian/raw/main/assests/logo.png?raw=true"></a>
+  <a href="http://zhijian.readthedocs.io"><img width="500px" height="auto" src="https://github.com/zhangyikaii/LAMDA-ZhiJian/raw/main/assests/logo.png?raw=true"></a>
 </div>
 
 &nbsp;
