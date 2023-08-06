@@ -50,26 +50,17 @@
 
 
 
-Get Started
+Fine-tune a Pre-trained ViT from :code:`timm`
 =================================
 
 .. raw:: html
 
-   <span style="font-size: 25px;">👋🏼</span>
+   <span style="font-size: 25px;">👓</span>
    <p></p>
 
 
 :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` is an **unifying** and **rapidly deployable** toolbox for **pre-trained model reuse**.
 
-- **What** \& **Why** Reuse?
-
-  - Performing downstream tasks **with the help of pre-trained model**, including model structures, weights, or other derived rules.
-  - Significantly **accelerating convergence** and **improving downstream performance**.
-
-The recent booming development of deep learning techniques has resulted in **a mushrooming of** open-source pre-trained models, with significant contributions from :code:`PyTorch`, :code:`TensorFlow`, and :code:`HuggingFace Transformers`.
-These PTMs stem from the de-facto paradigm as "pre-training to full-parameter fine-tuning", where one of the most fundamental and representative approaches involves **initializing the model with pre-trained weights**. Recently, advanced methods have been developed to harness PTM knowledge from diverse perspectives. These approaches include expanding model structures, applying constraints on weight initialization, or seeking guidance from the source hypothesis space. They are applicable in scenarios where target task data accumulates dynamically or exhibits distribution shifts.
-
-To better categorize and summarize the reuse methods, we consider the architect, tuner, and merger pipeline. :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` offers a modular design, easy-to-use interfaces, and rich custom configuration, empowering deep learning practitioners to seamlessly switch between and combine diverse reuse methods. Furthermore, it boosts the creation of novel reuse methods tailored to current target tasks.
 
 Overview
 -------------------------
@@ -77,42 +68,16 @@ Overview
 :customcolor5:`In` :customcolor4:`the` :customcolor2:`following` :customcolor1:`example`, we show how :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`:
 
   + **Construct** a **Pre-Trained Vision Transformer** from :code:`timm`
-
-    + with custom **LoRA** module
   + **Tune** with supervision on CIFAR-100 dataset
   + **Infer** to evaluate the performance
 
 The figure below shows the three stages of our example. To run the following code, please click `[Open In Colab] <TODO.ipynb>`_.
 
-.. figure:: ../_static/images/tutorials_get_started_vit_lora.png
+.. figure:: ../_static/images/tutorials_get_started_vit.png
    :align: center
 
 
-- **All in just 10 minutes**
-
-  - :customcolor5:`1 min` to install :code:`zhijian`
-  - :customcolor4:`2 mins` to select the dataset
-  - :customcolor2:`3 mins` to construct the **Vision Transformer** from :code:`timm` with custom **LoRA** module
-  - :customcolor1:`4 mins` to deploy **supervised fine-tuning** and test process
-
-🚀 **Let's get started!**
-
-Install :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`
--------------------------
-
-  .. code-block:: bash
-
-    $ pip install zhijian
-
-After installation, open your python console and type
-  ::
-
-    import zhijian
-    print(zhijian.__version__)
-
-If no error occurs, you have successfully installed.
-
-Select Dataset
+Prepare Dataset and Model
 -------------------------
 
 :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` provides the loading interface for *19 datasets* of `VTAB <https://arxiv.org/pdf/1910.04867.pdf>`_ benchmark, which spanning several domains including general objects, animals and plants, food and daily necessities, medicine, remote sensing and so on.
@@ -165,10 +130,7 @@ Customize your own dataset, please see `here <TODO>`_.
     $ Please input your dataset directory: your/dataset/directory
 
 
-Construct Pre-trained Model
--------------------------
-
-Next, we will construct a pre-trained **Vision Transformer** from :code:`timm` library, with the custom **LoRA** module.
+Next, we will construct a pre-trained **Vision Transformer** from :code:`timm` library.
 
 + Seamlessly modify the structure is possible. :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` welcomes any base model and any additional modifications. The base part supports:
 
@@ -176,9 +138,7 @@ Next, we will construct a pre-trained **Vision Transformer** from :code:`timm` l
     + Other popular projects, *e.g.*, `vit-pytorch <https://github.com/lucidrains/vit-pytorch>`_ (stars `14k <https://github.com/lucidrains/vit-pytorch/stargazers>`_) and **any custom** architecture.
     + **Large Language Model**, including `baichuan <https://huggingface.co/baichuan-inc/baichuan-7B>`_ (*7B*), `LLaMA <https://github.com/facebookresearch/llama>`_ (*7B/13B*), and `BLOOM <https://huggingface.co/bigscience/bloom>`_ (*560M/1.1B/1.7B/3B/7.1B*).
 
-:lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` also includes assembling additional tuning structures, similar to building *LEGO* bricks. For more detailed customization of each part, please see `here <TODO>`_.
-
-Adapt the `Vision Transformer` structure just requires **1~3** lines of code.
+Adapt the `Vision Transformer` structure just requires **1~3** lines of code. Customize your own pre-trained model, please see `here <TODO>`_.
 
 + Now, run the following code block, select the model architecture (**Vision Transformer** as below):
   ::
@@ -203,55 +163,11 @@ Adapt the `Vision Transformer` structure just requires **1~3** lines of code.
     $ Please input a model, type 'help' to show the options: 1
     $ Your selection: [1] timm.vit_base_patch16_224_in21k
 
-+ Next, run the following code block, select the additional add-in structure (**LoRA** as below):
-  ::
-
-    availables   = available_example_models[model]
-    config_blitz = availables[select_from_input('add-in structure', availables.keys())]   # user input about add-in structure
-
-  .. code-block:: bash
-
-    $ Please input a add-in structure, type 'help' to show the options: help
-    $ Available add-in structure(s):
-                        [1] LoRA
-                        [2] Adapter
-                        [3] Convpass
-                        [4] None
-    $ Please input a add-in structure, type 'help' to show the options: 1
-    $ Your selection: [1] LoRA
-
 
 Deploy Training and Test Process
 -------------------------
 
 :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` enables customization of the fine-tune which part of the parameters using `args.reuse_key`, *such as* assigning `blocks[6:8]` to only tune `model.blocks[6]` to `model.blocks[8]` and their sub-modules.
-
-+ Now, run the following code block, select which part of the parameters to fine-tune (the rest are frozen)
-  ::
-
-    available_example_reuse_modules = {
-        'timm.vit_base_patch16_224_in21k': {
-            'linear layer only': 'addin,head,fc_norm',
-            'the last block and the linear layer (Partial-1)': 'addin,blocks[11],head,fc_norm',
-            'the last two blocks and the linear layer (Partial-2)': 'addin,blocks[10:12],head,fc_norm',
-            'the last four blocks and the linear layer (Partial-4)': 'addin,blocks[8:12],head,fc_norm',
-            'all parameters': ''
-        }
-    }
-
-    availables          = available_example_reuse_modules[model]
-    reuse_modules_blitz = availables[select_from_input('reuse module', availables.keys())] # user input about reuse modules
-
-  .. code-block:: bash
-
-    $ Please input a reuse module, type 'help' to show the options: help
-    $ Available reuse modules(s):
-                      [1] add-ins and linear layer
-                      [2] add-ins and the last block and the linear layer (Partial-1)
-                      [3] add-ins and the last two blocks and the linear layer (Partial-2)
-                      [4] add-ins and the last four blocks and the linear layer (Partial-4)
-    $ Please input a reuse module, type 'help' to show the options: 1
-    $ Your selection: [1] add-ins and linear layer
 
 + Taking the :code:`training_mode` as *finetune*, and next, we configure the parameters
 
@@ -275,8 +191,7 @@ Deploy Training and Test Process
 
   .. code-block:: bash
 
-    $ Preparing args..
-      {'aa': None,
+    $ {
       'addins': [{'hook': [['adapt', 'post']],
                   'location': [['blocks', 0, 'attn', 'qkv']],
                   'name': 'LoRA'},
@@ -354,7 +269,6 @@ Deploy Training and Test Process
 
 + Run the following to prepare the optimizer, learning rate scheduler and loss function
 
-  For more customization options, please see TODO
   ::
 
     optimizer = optim.Adam(
@@ -426,3 +340,4 @@ Deploy Training and Test Process
             Epoch   GPU Mem.       Time      Acc@1      Acc@5
               1/1      7.16G     0.1192      5.723      19.39: 100%|██████████| 157/157 [00:18<00:00, 8.30batch/s] 
       ***   Best results: [Acc@1: 5.722531847133758], [Acc@5: 19.386942675159236]
+

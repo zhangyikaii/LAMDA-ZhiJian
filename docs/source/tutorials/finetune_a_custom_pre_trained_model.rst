@@ -48,12 +48,14 @@
     </style>
 
 
-Customize Dataloader
-====================
+
+
+Fine-tune a Custom Pre-Trained Model
+=================================
 
 .. raw:: html
 
-   <span style="font-size: 25px;">📂</span>
+   <span style="font-size: 25px;">🕶️</span>
    <p></p>
 
 
@@ -63,9 +65,98 @@ Customize Dataloader
 Overview
 -------------------------
 
-:customcolor5:`In` :customcolor4:`the` :customcolor2:`following` :customcolor1:`example`, we show how to customize **your own** dataloader for **a new target dataset** in :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`.
+:customcolor5:`In` :customcolor4:`the` :customcolor2:`following` :customcolor1:`example`, we show how :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`:
 
-**Feel free** to deploy model reusability technology on *any* dataset, with loading in the conventional `PyTorch` style.
+  + **Construct** a **custom MLP**
+  + **Tune** with supervision on a **cutom dataset**
+  + **Infer** to evaluate the performance
+
+The figure below shows the three stages of our example. To run the following code, please click `[Open In Colab] <TODO.ipynb>`_.
+
+.. figure:: ../_static/images/tutorials_get_started_mlp.png
+   :align: center
+
+Construct Custom Model
+-------------------------
+
+We fisrt begin with a three-layer Multilayer Perceptron (MLP).
+
+
+.. figure:: ../_static/images/tutorials_mlp.png
+   :align: center
+
+   Custom Multilayer Perceptron (MLP) Architecture
+
+
+Although a multi-layer perceptron is not a good image learner, we can quickly get started with it. For other custom networks, we can also make similar designs and modifications by analogy. 
+
++ Run the code block below to customize the model:
+
+.. code-block:: python
+
+   import torch.nn as nn
+   
+   class MLP(nn.Module):
+       """
+       MLP Class
+       ==============
+
+       Multilayer Perceptron (MLP) model for image (224x224) classification tasks.
+
+       Args:
+           args (object): Custom arguments or configurations.
+           num_classes (int): Number of output classes.
+       """
+       def __init__(self, args, num_classes):
+           super(MLP, self).__init__()
+           self.args = args
+           self.image_size = 224
+           self.fc1 = nn.Linear(self.image_size * self.image_size * 3, 256)
+           self.fc2 = nn.Linear(256, 256)
+           self.fc3 = nn.Linear(256, num_classes)
+
+       def forward(self, x):
+           """
+           Forward pass of the model.
+
+           Args:
+               x (torch.Tensor): Input tensor.
+
+           Returns:
+               torch.Tensor: Output logits.
+           """
+           x = x.view(x.size(0), -1)
+           x = self.fc1(x)
+           x = nn.ReLU()(x)
+           x = self.fc2(x)
+           x = nn.ReLU()(x)
+           x = self.fc3(x)
+           return x
+
+
++ Next, run the code block below to configure the GPU and the model:
+
+  ::
+
+   model = MLP(args, DATASET2NUM_CLASSES[args.dataset.replace('VTAB.','')])
+   model = ModelWrapper(model)
+   model_args = dict2args({'hidden_size': 512})
+
+
++ Now, run the code block below to prepare the :code:`trainer` with passing in the parameter :code:`model`:
+
+  ::
+
+   trainer = prepare_trainer(
+       args,
+       model=model,
+       model_args=model_args,
+       device=device,
+       ...
+   )
+
+   trainer.fit()
+   trainer.test()
 
 
 Prepare Custom Dataset
@@ -156,67 +247,3 @@ Prepare Custom Dataset
            shuffle=False
        )
    num_classes = len(train_dataset.classes)
-
-
-+ Now, set up the trainer with passing in parameter :code:`train_loader` and :code:`val_loader`:
-
-  ::
-
-   trainer = prepare_trainer(
-       args,
-       model=model, model_args=model_args, device=device,
-       train_loader=train_loader,
-       val_loader=val_loader,
-       num_classes=num_classes,
-       optimizer=optimizer,
-       lr_scheduler=lr_scheduler,
-       criterion=criterion
-   )
-
-   trainer.fit()
-   trainer.test()
-
-  .. code-block:: bash
-
-    $ Log level set to: INFO
-      Log files are recorded in: your/log/directory/0718-20-10-57-792
-      Trainable/total parameters of the model: 0.30M / 86.10M (0.34700%)
-  
-          Epoch   GPU Mem.       Time       Loss         LR
-              1/5      5.48G      1.686       1.73      0.001: 100%|██████████| 1.00/1.00 [00:01<00:00, 1.22s/batch]
-  
-          Epoch   GPU Mem.       Time      Acc@1      Acc@5
-              1/5      5.48G     0.3243         16        100: 100%|██████████| 1.00/1.00 [00:00<00:00, 2.39batch/s]
-      ***   Best results: [Acc@1: 16.0], [Acc@5: 100.0]
-  
-          Epoch   GPU Mem.       Time       Loss         LR
-              2/5       5.6G      1.093      1.448 0.00090451: 100%|██████████| 1.00/1.00 [00:00<00:00, 1.52batch/s]
-  
-          Epoch   GPU Mem.       Time      Acc@1      Acc@5
-              2/5       5.6G     0.2647         12        100: 100%|██████████| 1.00/1.00 [00:00<00:00, 2.58batch/s]
-      ***   Best results: [Acc@1: 12.0], [Acc@5: 100.0]
-  
-          Epoch   GPU Mem.       Time       Loss         LR
-              3/5       5.6G      1.088      1.369 0.00065451: 100%|██████████| 1.00/1.00 [00:00<00:00, 1.54batch/s]
-  
-          Epoch   GPU Mem.       Time      Acc@1      Acc@5
-              3/5       5.6G     0.2899         12        100: 100%|██████████| 1.00/1.00 [00:00<00:00, 2.54batch/s]
-      ***   Best results: [Acc@1: 12.0], [Acc@5: 100.0]
-  
-          Epoch   GPU Mem.       Time       Loss         LR
-              4/5       5.6G      1.067      1.403 0.00034549: 100%|██████████| 1.00/1.00 [00:00<00:00, 1.53batch/s]
-  
-          Epoch   GPU Mem.       Time      Acc@1      Acc@5
-              4/5       5.6G     0.2879         16        100: 100%|██████████| 1.00/1.00 [00:00<00:00, 2.42batch/s]
-      ***   Best results: [Acc@1: 16.0], [Acc@5: 100.0]
-  
-          Epoch   GPU Mem.       Time       Loss         LR
-              5/5       5.6G      1.077      1.342 9.5492e-05: 100%|██████████| 1.00/1.00 [00:00<00:00, 1.55batch/s]
-  
-          Epoch   GPU Mem.       Time      Acc@1      Acc@5
-              5/5       5.6G      0.246         16        100: 100%|██████████| 1.00/1.00 [00:00<00:00, 2.79batch/s]
-      ***   Best results: [Acc@1: 16.0], [Acc@5: 100.0]
-  
-          Epoch   GPU Mem.       Time      Acc@1      Acc@5
-              1/1       5.6G     0.2901         16        100: 100%|██████████| 1.00/1.00 [00:00<00:00, 2.52batch/s]
-      ***   Best results: [Acc@1: 16.0], [Acc@5: 100.0]

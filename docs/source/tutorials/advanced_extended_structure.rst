@@ -16,10 +16,39 @@
         color: #fd4d01;
         font-weight: bold;
     }
+    .customcolor1 {
+        color: #f48702;
+        font-weight: bold;
+    }
+    .customcolor2 {
+        color: #f64600;
+        font-weight: bold;
+    }
+    .customcolor3 {
+        color: #de1500;
+        font-weight: bold;
+    }
+    .customcolor4 {
+        color: #b70501;
+        font-weight: bold;
+    }
+    .customcolor5 {
+        color: #d6005c;
+        font-weight: bold;
+    }
+    .lamdablue {
+        color: #47479e;
+        font-weight: bold;
+    }
+    .lamdaorange {
+        color: #fd4d01;
+        font-weight: bold;
+    }
 
     </style>
 
-Customize Pre-trained Models
+
+:customcolor5:`Advanced`: Extended Structure
 ============================
 
 .. raw:: html
@@ -27,18 +56,28 @@ Customize Pre-trained Models
    <span style="font-size: 25px;">🛠️</span>
    <p></p>
 
-This example shows how to **customize your own pre-trained model** for new ideas. Tailor and integrate *any* **add-in** extra module within the vast pre-trained model **with lightning speed**.
+
+:lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` is an **unifying** and **rapidly deployable** toolbox for **pre-trained model reuse**.
 
 
-.. figure:: ../_static/images/tutorials_overview.png
+Overview
+-------------------------
+
+:customcolor5:`In` :customcolor4:`the` :customcolor2:`following` :customcolor1:`example`, we show how :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`:
+
+  + **Customize your own pre-trained model** for new ideas of structure
+  + Tailor and integrate *any* **add-in** extra module within the vast pre-trained model **with lightning speed**
+
+
+.. figure:: ../_static/images/tutorials_addin_overview.png
    :align: center
+
+:sub:`This chapter may involve more advanced configuration.`
 
 Introduce the Custom Model
 -------------------------
 
 Let's begin with a three-layer Multilayer Perceptron (MLP).
-
-Although a multi-layer perceptron is not a good image learner, we can quickly get started with it. For other custom networks, we can also make similar designs and modifications by analogy. 
 
 + Run the code block below to customize the model:
 
@@ -89,11 +128,16 @@ Although a multi-layer perceptron is not a good image learner, we can quickly ge
 
    Custom Multilayer Perceptron (MLP) Architecture
 
-Now, expand models from **fleeting moments of inspiration**.
+Now, expand models from **a moment of inspiration**, do as you please.
 
 We will customize and modify the network structure through a few lines of code from :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`.
+This additional structures are also implemented based on the PyTorch framework, and inherit the base class `AddinBase`, which integrates some basic methods for data access.
 
-The additional auxiliary structures are also implemented based on the PyTorch framework. The auxiliary structures inherit the base class `AddinBase`, which integrates some basic methods for data access.
++ **In the following paragraphs**, we introduce the components of the extended structure, they are:
+
+  + :customcolor5:`1.` Main forward function.
+  + :customcolor3:`2.` Entry points to guide inputs
+  + :customcolor1:`3.` Configuration syntax for entry point.
 
 Design Additional Add-in Modules
 -------------------------
@@ -201,7 +245,12 @@ Design Additional Add-in Modules
            outputs = outputs + self.forward(self.inputs_cache)
            return outputs
 
-In the extended auxiliary structure `MLPAddin` mentioned above, we add a low-rank bottleneck (consisting of two linear layers, with a reduced dimension in the middle) inspired by efficient parameter methods like *Adapter* or *LoRA*. We define and implement this in the `__init__` and `forward` functions.
+Main forward function
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the extended auxiliary structure :code:`MLPAddin` mentioned above, we add a low-rank bottleneck (consisting of two linear layers, with a reduced dimension in the middle) inspired by efficient parameter methods like *Adapter* or *LoRA*.
+
+We define and implement this as **in the** :code:`__init__` **and** :code:`forward` **functions**. The data goes through this structure and executes via the :code:`forward` function.
 
 
 .. figure:: ../_static/images/tutorials_addin_structure.png
@@ -210,10 +259,20 @@ In the extended auxiliary structure `MLPAddin` mentioned above, we add a low-ran
    Additional Auxiliary Structure Example
 
 
-As shown above, the `hook` methods starting with `adapt_` are our entry functions. They serve as hooks to attach the extended modules to the base model. We will further explain their roles in the following text.
+Entry points to guide inputs
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As shown above, the `hook` methods starting with `adapt_` are our entry points (functions) to guide the input data. They serve as hooks to attach the extended modules to the base model.
+
+They are roughly divided into two categories:
+
+  + guide data input before the modules
+  + direct data output after the modules
+
+These are generally closely associated with the :code:`forward` function, and the data enters extended structures through these entry points. We will further explain their roles in the following *Configuration Syntax* section.
 
 
-Deploy the Inter-layer Insertion & Cross-layer Concatenation Points
+Config Syntax of Entry Points
 -------------------------
 
 We aim to customize our model by **inter-layer insertion** and **cross-layer concatenation** of the auxiliary structures at different positions within the base model (such as the custom MLP mentioned earlier). When configuring the insertion or concatenation positions, :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` provides **a minimalistic one-line configuration syntax**.

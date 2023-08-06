@@ -1,0 +1,47 @@
+addins:
+  - {name: AdaptFormer, 
+    location: [[blocks, 0, norm2], [blocks, 0, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 1, norm2], [blocks, 1, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 2, norm2], [blocks, 2, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 3, norm2], [blocks, 3, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 4, norm2], [blocks, 4, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 5, norm2], [blocks, 5, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 6, norm2], [blocks, 6, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 7, norm2], [blocks, 7, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 8, norm2], [blocks, 8, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 9, norm2], [blocks, 9, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 10, norm2], [blocks, 10, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+  - {name: AdaptFormer, 
+    location: [[blocks, 11, norm2], [blocks, 11, drop_path2]], 
+    hook: [[adapt, pre], [add_post, post]]}
+
+adaptformer_dropout: 0.1
+adaptformer_reduction_dim: 64
+adaptformer_scalar: 0.1
+adaptformer_layernorm_option: none
+adaptformer_add_residual: false
+adaptformer_ffn_option: parallel
+
+reuse_keys:
+  - [addin]

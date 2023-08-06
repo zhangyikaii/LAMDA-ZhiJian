@@ -1,0 +1,15 @@
+model: timm.vit_base_patch16_224_in21k
+config: zhijian/models/configs/lora.yaml
+config_blitz: null
+reuse_keys_blitz: null
+dataset: VTAB-1k.CIFAR-100
+dataset_dir: /data/zhangyk/data/petl
+initial_checkpoint: /data/zhangyk/data/petl/model/ViT-B_16.npz
+pretrained_url: 
+  - /data/zhangyk/models/kel_logs/lora_cifar/best.pt
+verbose: true
+training_mode: nearest_class_mean
+shot_transform: l2n
+metric: euclidean
+temperature: 1
+time_str: ''

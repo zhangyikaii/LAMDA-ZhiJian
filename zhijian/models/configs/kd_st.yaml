@@ -1,0 +1,201 @@
+addins:
+  - {
+    name: LoRA, 
+    location: [[blocks, 0, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 1, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 2, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 3, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 4, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 5, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 6, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 7, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 8, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 9, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 10, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 11, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+
+reuse_keys:
+  - [addin]
+  - [head]
+  - [fc_norm]
+
+model: timm.vit_base_patch16_224_in21k
+verbose: true
+pretrained_url: null
+ckpt_url: ''
+class_map: ''
+pretrained: true
+initial_checkpoint: /data/zhangyk/data/petl/model/ViT-B_16.npz
+resume: ''
+no_resume_opt: false
+num_classes: null
+gp: null
+img_size: null
+in_chans: null
+input_size: null
+crop_pct: null
+crop_mode: null
+mean: null
+std: null
+interpolation: ''
+validation_batch_size: null
+channels_last: false
+fuser: ''
+grad_checkpointing: false
+fast_norm: false
+torchscript: false
+torchcompile: null
+aot_autograd: false
+opt: sgd
+opt_eps: null
+opt_betas: null
+momentum: 0.9
+weight_decay: 2e-05
+clip_grad: null
+clip_mode: norm
+layer_decay: null
+sched: cosine
+sched_on_updates: false
+lr_base: 0.1
+lr_base_size: 256
+lr_base_scale: 
+lr_noise: null
+lr_noise_pct: 0.67
+lr_noise_std: 1.0
+lr_cycle_mul: 1.0
+lr_cycle_decay: 0.5
+lr_cycle_limit: 1
+lr_k_decay: 1.0
+warmup_lr: 1e-05
+min_lr: 0
+epochs: 300
+epoch_repeats: 0.0
+start_epoch: null
+decay_milestones: [90, 180, 270]
+decay_epochs: 90
+warmup_epochs: 5
+warmup_prefix: false
+cooldown_epochs: 0
+patience_epochs: 10
+decay_rate: 0.1
+no_aug: false
+scale: [0.08, 1.0]
+ratio: [0.75, 1.3333333333333333]
+hflip: 0.5
+vflip: 0.0
+color_jitter: 0.4
+aa: null
+aug_repeats: 0
+aug_splits: 0
+jsd_loss: false
+bce_loss: false
+bce_target_thresh: null
+reprob: 0.0
+remode: pixel
+recount: 1
+resplit: false
+mixup: 0.0
+cutmix: 0.0
+cutmix_minmax: null
+mixup_prob: 1.0
+mixup_switch_prob: 0.5
+mixup_mode: batch
+mixup_off_epoch: 0
+smoothing: 0.1
+train_interpolation: random
+drop: 0.0
+drop_connect: null
+drop_path: null
+drop_block: null
+bn_momentum: null
+bn_eps: null
+sync_bn: false
+dist_bn: reduce
+split_bn: false
+model_ema: false
+model_ema_force_cpu: false
+model_ema_decay: 0.9998
+worker_seeding: all
+recovery_interval: 0
+checkpoint_hist: 10
+save_images: false
+amp: false
+amp_dtype: float16
+amp_impl: native
+no_ddp_bb: false
+pin_mem: false
+no_prefetcher: false
+output: ''
+experiment: 
+eval_metric: top1
+tta: 0
+local_rank: 0
+use_multi_epochs_loader: false
+log_wandb: false
+
+kd_mode: refilled
+lambda_kd: 1.0
+T: 4.0
+T2: 2.0
+p: 2.0
+w_dist: 25.0
+w_angle: 50.0
+m: 2.0
+gamma: 0.4
+P_order: 2
+w_irg_vert: 0.1
+w_irg_edge: 5.0
+w_irg_tran: 5.0
+sf: 1.0
+init_var: 5.0
+att_f: 1.0
+is_ncm: true
+shot_transform: l2n
+metric: euclidean
+temperature: 1

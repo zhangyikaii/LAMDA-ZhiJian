@@ -62,33 +62,35 @@ Welcome to :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablu
    :caption: Contents:
 
 
-:lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` (`执简驭繁 <https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81>`_) is a PyTorch-based lightweight framework for **reusing pre-trained models and transferring them to new datasets**. It offers a unified and flexible solution for popular methods such as *regularization* based, *parameter-efficient transfer learning* based, *feature reuse* based, *knowledge distillation* based, and *model merging* based.
-:lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` achieves state-of-the-art model capabilities with a :customcolor5:`R`:customcolor4:`E`:customcolor3:`U`:customcolor2:`S`:customcolor1:`E` workflow. **The provided interface methods include**:
+.. figure:: ../_static/images/overview.png
+   :align: center
 
-* :customcolor5:`R` **egularization** via Pre-Trained Parameters
-    * **L**\ :sup:`2` **penalty / L**\ :sup:`2` **SP**, *Explicit Inductive Bias for Transfer Learning with Convolutional Networks.* In:ICML'18. `[Paper] <https://arxiv.org/pdf/1802.01483.pdf>`_ `[Code] <https://github.com>`_
-    * **Spectral Norm**, *Spectral Normalization for Generative Adversarial Networks.* In: ICLR'18. `[Paper] <https://arxiv.org/pdf/1802.05957.pdf>`_ `[Code] <https://github.com>`_
-    * **Optimal Transport Based**, *Trading beams for bandwidth: Imaging with randomized beamforming.* In: ICML'19. `[Paper] <https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Learning_Debiased_Representations_via_Conditional_Attribute_Interpolation_CVPR_2023_paper.pdf>`_ `[Code] <https://github.com>`_
-    * **BSS**, *Catastrophic Forgetting Meets Negative Transfer:Batch Spectral Shrinkage for Safe Transfer Learning.* In: NeurIPS'19.. `[Paper] <https://proceedings.neurips.cc/paper_files/paper/2019/file/c6bff625bdb0393992c9d4db0c6bbe45-Paper.pdf>`_ `[Code] <https://github.com>`_
-    * **DELTA**, *DELTA: DEep Learning Transfer using Feature Map with Attention for Convolutional Networks.* In: ICLR'19. `[Paper] <https://arxiv.org/pdf/1901.09229.pdf>`_ `[Code] <https://github.com>`_
-    * **Elastic Weight Consolidation**, *Overcoming catastrophic forgetting in neural networks.* In: PNAS'17. `[Paper] <https://arxiv.org/pdf/1612.00796.pdf>`_ `[Code] <https://github.com>`_
-* :customcolor4:`E` **fficient Tuning** with Transferred Addin-like **Parameters**
-    * **LoRA**, *LoRA: Low-Rank Adaptation of Large Language Models.* In: ICLR'22. `[Paper] <https://arxiv.org/pdf/2106.09685.pdf>`_ `[Code] <https://github.com>`_
-    * **Adapter**, *Parameter-Efficient Transfer Learning for NLP.* In: ICML'19. `[Paper] <https://arxiv.org/pdf/1902.00751.pdf>`_ `[Code] <https://github.com>`_
-    * **Visual Prompt Tuning / Prefix**, *Visual Prompt Tuning.* In: ECCV'22. `[Paper] <https://arxiv.org/pdf/2203.12119.pdf>`_ `[Code] <https://github.com>`_
-    * **Convpass**, *Convolutional Bypasses Are Better Vision Transformer Adapters.* In: Tech Report 07-2022. `[Paper] <https://arxiv.org/pdf/2207.07039.pdf>`_ `[Code] <https://github.com>`_
-    * **Scaling & Shifting**, *Scaling & Shifting Your Features: A New Baseline for Efficient Model Tuning.* In: NeurIPS'22. `[Paper] <https://arxiv.org/pdf/2210.08823.pdf>`_ `[Code] <https://github.com>`_
-    * **AdaptFormer**, *AdaptFormer: Adapting Vision Transformers for Scalable Visual Recognition.* In: NeurIPS'22. `[Paper] <https://arxiv.org/pdf/2205.13535.pdf>`_ `[Code] <https://github.com>`_
-    * **Fact-Tuning**, *FacT: Factor-Tuning for Lightweight Adaptation on Vision Transformer.* In: AAAI'23. `[Paper] <https://arxiv.org/pdf/2212.03145.pdf>`_ `[Code] <https://github.com>`_
-* :customcolor3:`U` **tilization of Pre-Trained Features** and Partial Backbones
+:lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` (`执简驭繁 <https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81>`_) is a *comprehensive* and *user-friendly* :code:`PyTorch`-based **toolbox** for leveraging **foundation pre-trained models** and their **fine-tuned counterparts** to *extract* knowledge and *expedite* learning in real-world tasks, *i.e.*, **serving the** :customcolor1:`M`:customcolor1:`o`:customcolor2:`d`:customcolor2:`e`:customcolor3:`l` :customcolor3:`R`:customcolor4:`e`:customcolor4:`u`:customcolor5:`s`:customcolor5:`e` **tasks**.
+
+**The rapid progress** in deep learning has led to the emergence of **numerous open-source Pre-Trained Models (PTMs)** on platforms like PyTorch, TensorFlow, and HuggingFace Transformers. Leveraging these PTMs for specific tasks empowers them to handle objectives effectively, creating valuable resources for the machine-learning community. **Reusing PTMs is vital in enhancing target models' capabilities and efficiency**, achieved through adapting the architecture, customizing learning on target data, or devising optimized inference strategies to leverage PTM knowledge. **To facilitate a holistic consideration of various model reuse strategies**, :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` categorizes model reuse methods into *three* sequential modules: :customcolor2:`Architect`, :customcolor3:`Tuner`, and :customcolor5:`Merger`, aligning with the stages of **model preparation**, **model learning**, and **model inference** on the target task, respectively. **The provided interface methods include**:
+
+* :customcolor2:`A` **rchitect Module**
+
+    The Architect module involves **modifying the pre-trained model to fit the target task**, and reusing certain parts of the pre-trained model while introducing new learnable parameters with specialized structures.
+
     * **Linear Probing**, *Parameter-Efficient Transfer Learning for NLP.* In:  ICML'19. `[Paper] <https://arxiv.org/pdf/1902.00751.pdf>`_ `[Code] <https://github.com>`_
     * **Partial-k**, *How transferable are features in deep neural networks?* In: NeurIPS'14. `[Paper] <https://arxiv.org/pdf/1411.1792.pdf>`_ `[Code] <https://github.com>`_
-    * **Nearest Class Mean**, *Parameter-Efficient Transfer Learning for NLP.* In: ICML'19. `[Paper] <https://arxiv.org/pdf/1902.00751.pdf>`_ `[Code] <https://github.com>`_
-    * **SimpleShot**, *SimpleShot: Revisiting Nearest-Neighbor Classification for Few-Shot Learning.* In: CVPR'19. `[Paper] <https://arxiv.org/pdf/1911.04623.pdf>`_ `[Code] <https://github.com>`_
-    * **BitFit**, *BitFit: Simple Parameter-efficient Fine-tuning for Transformer-based Masked Language-models.* In: ACL'22. `[Paper] <https://arxiv.org/pdf/2106.10199.pdf>`_ `[Code] <https://github.com>`_
-    * **Diff Pruning**, *Parameter-Efficient Transfer Learning with Diff Pruning.* In:  ACL'21. `[Paper] <https://arxiv.org/pdf/2012.07463.pdf>`_ `[Code] <https://github.com>`_
-* :customcolor2:`S` **upervisions** from Pre-Trained Predictions as **Knowledge Distillation**
-    * **Vanilla Knowledge Distillation / LwF**, *Learning without Memorizing.* In: CVPR'19. `[Paper] <https://arxiv.org/pdf/1811.08051.pdf>`_ `[Code] <https://github.com>`_
+    * **Adapter**, *Parameter-Efficient Transfer Learning for NLP.* In: ICML'19. `[Paper] <https://arxiv.org/pdf/1902.00751.pdf>`_ `[Code] <https://github.com>`_
+    * **LoRA**, *LoRA: Low-Rank Adaptation of Large Language Models.* In: ICLR'22. `[Paper] <https://arxiv.org/pdf/2106.09685.pdf>`_ `[Code] <https://github.com>`_
+    * **Visual Prompt Tuning / Prefix**, *Visual Prompt Tuning.* In: ECCV'22. `[Paper] <https://arxiv.org/pdf/2203.12119.pdf>`_ `[Code] <https://github.com>`_
+    * **Head2Toe**, *Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.* In:ICML'22. `[Paper] <https://arxiv.org/pdf/2201.03529.pdf>`_ `[Code] <https://github.com>`_
+    * **Scaling & Shifting**, *Scaling & Shifting Your Features: A New Baseline for Efficient Model Tuning.* In: NeurIPS'22. `[Paper] <https://arxiv.org/pdf/2210.08823.pdf>`_ `[Code] <https://github.com>`_
+    * **AdaptFormer**, *AdaptFormer: Adapting Vision Transformers for Scalable Visual Recognition.* In: NeurIPS'22. `[Paper] <https://arxiv.org/pdf/2205.13535.pdf>`_ `[Code] <https://github.com>`_
+    * **Convpass**, *Convolutional Bypasses Are Better Vision Transformer Adapters.* In: Tech Report 07-2022. `[Paper] <https://arxiv.org/pdf/2207.07039.pdf>`_ `[Code] <https://github.com>`_
+    * **Fact-Tuning**, *FacT: Factor-Tuning for Lightweight Adaptation on Vision Transformer.* In: AAAI'23. `[Paper] <https://arxiv.org/pdf/2212.03145.pdf>`_ `[Code] <https://github.com>`_
+    * **BitFit**, TTODO
+    * **Diff Pruning**, TTODO
+
+* :customcolor3:`T` **uner Module**
+
+    The Tuner module focuses on **training the target model with guidance from pre-trained model knowledge** to expedite the optimization process, *e.g.*, via adjusting objectives, optimizers, or regularizers.
+
+    * **Metric-based Knowledge Distillation / LwF**, TTODO *Learning without Memorizing.* In: CVPR'19. `[Paper] <https://arxiv.org/pdf/1811.08051.pdf>`_ `[Code] <https://github.com>`_
     * **FitNet**, *FitNets: Hints for Thin Deep Nets.* In:  ICLR'15. `[Paper] <https://arxiv.org/pdf/1412.6550.pdf>`_ `[Code] <https://github.com>`_
     * **FSP**, *A Gift from Knowledge Distillation: Fast Optimization, Network Minimization and Transfer Learning.* In: CVPR'17. `[Paper] <https://openaccess.thecvf.com/content_cvpr_2017/papers/Yim_A_Gift_From_CVPR_2017_paper.pdf>`_ `[Code] <https://github.com>`_
     * **NST**, *Like What You Like: Knowledge Distill via Neuron Selectivity Transfer.* In: CVPR'17. `[Paper] <https://arxiv.org/pdf/1707.01219.pdf>`_ `[Code] <https://github.com>`_
@@ -96,13 +98,32 @@ Welcome to :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablu
     * **SPKD**, *Similarity-Preserving Knowledge Distillation.* In: CVPR'19. `[Paper] <https://arxiv.org/pdf/1907.09682.pdf>`_ `[Code] <https://github.com>`_
     * **CRD**, *Contrastive Representation Distillation.* In: ICLR'20. `[Paper] <https://arxiv.org/pdf/1910.10699.pdf>`_ `[Code] <https://github.com>`_
     * **REFILLED**, *Distilling Cross-Task Knowledge via Relationship Matching.* In: CVPR'20. `[Paper] <http://www.lamda.nju.edu.cn/lus/files/CVPR20_ReFilled.pdf>`_ `[Code] <https://github.com>`_
-* :customcolor1:`E` **nsembling and Merging** Multiple Models
-    * **Model Soup:** *averaging weights of multiple fine-tuned models improves accuracy without increasing inference time.* In: ICML'22. `[Paper] <https://arxiv.org/pdf/2203.05482.pdf>`_ `[Code] <https://github.com>`_
     * **WiSE-FT**, *Robust fine-tuning of zero-shot models.* In: CVPR'22. `[Paper] <https://arxiv.org/pdf/2109.01903.pdf>`_ `[Code] <https://github.com>`_
-    * **Head2Toe**, *Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.* In:ICML'22. `[Paper] <https://arxiv.org/pdf/2201.03529.pdf>`_ `[Code] <https://github.com>`_
+    * **L**\ :sup:`2` **penalty / L**\ :sup:`2` **SP**, *Explicit Inductive Bias for Transfer Learning with Convolutional Networks.* In:ICML'18. `[Paper] <https://arxiv.org/pdf/1802.01483.pdf>`_ `[Code] <https://github.com>`_
+    * **Spectral Norm**, *Spectral Normalization for Generative Adversarial Networks.* In: ICLR'18. `[Paper] <https://arxiv.org/pdf/1802.05957.pdf>`_ `[Code] <https://github.com>`_
+    * **BSS**, *Catastrophic Forgetting Meets Negative Transfer:Batch Spectral Shrinkage for Safe Transfer Learning.* In: NeurIPS'19.. `[Paper] <https://proceedings.neurips.cc/paper_files/paper/2019/file/c6bff625bdb0393992c9d4db0c6bbe45-Paper.pdf>`_ `[Code] <https://github.com>`_
+    * **DELTA**, *DELTA: DEep Learning Transfer using Feature Map with Attention for Convolutional Networks.* In: ICLR'19. `[Paper] <https://arxiv.org/pdf/1901.09229.pdf>`_ `[Code] <https://github.com>`_
+    * **DIST**, TTODO
+    * **DeiT**, TTODO
 
-💡 :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` also has the following **highlights**:
+* :customcolor3:`M` **erger Module**
 
+    The Merger module **influences the inference phase** by either reusing pre-trained features or incorporating adapted logits from the pre-trained model.
+
+    * **Nearest Class Mean**, *Parameter-Efficient Transfer Learning for NLP.* In: ICML'19. `[Paper] <https://arxiv.org/pdf/1902.00751.pdf>`_ `[Code] <https://github.com>`_
+    * **SimpleShot**, *SimpleShot: Revisiting Nearest-Neighbor Classification for Few-Shot Learning.* In: CVPR'19. `[Paper] <https://arxiv.org/pdf/1911.04623.pdf>`_ `[Code] <https://github.com>`_
+    * **Model Soup**, *averaging weights of multiple fine-tuned models improves accuracy without increasing inference time.* In: ICML'22. `[Paper] <https://arxiv.org/pdf/2203.05482.pdf>`_ `[Code] <https://github.com>`_
+    * **Logits Ensemble**, TTODO
+    * **via Optimal Transport**,
+    * **Fisher Merging**,
+    * **REPAIR**,
+    * **Git Re-Basin**,
+    * **Deep Model Reassembly**,
+    * **ZipIt**, 
+
+💡 :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` **also has the following** :customcolor1:`hi`:customcolor2:`gh`:customcolor3:`li`:customcolor4:`gh`:customcolor5:`ts`:
+
+TTODO: 和 README统一
 + Support access to any of the **pre-trained model zoo**, including:
     + 🤗 **Hugging Face** series — `PyTorch Image Models (timm) <https://github.com/huggingface/pytorch-image-models>`_, `Transformers <https://github.com/huggingface/transformers>`_, **PyTorch** series — `Torchvision <https://pytorch.org/vision/stable/models.html>`_, and **OpenAI** series — `CLIP <https://github.com/openai/CLIP>`_.
     + Other popular projects, *e.g.*, `vit-pytorch <https://github.com/lucidrains/vit-pytorch>`_ (stars `14k <https://github.com/lucidrains/vit-pytorch/stargazers>`_) and **any custom** architecture.
@@ -163,8 +184,25 @@ The tutorials and API documentation are hosted on `zhijian.readthedocs.io <https
 Why :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`?
 ------------
 
-🎯 Concise things do big
-~~~~~~~~~~~~~
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| Related Library                                                                                                                                                 | Stars | # of Alg. | # of Model  | # of Dataset | # of Fields        | LLM Supp.| Docs. | 
++=================================================================================================================================================================+=======+===========+=============+==============+====================+==========+=======+ 
+| `PEFT <https://github.com/huggingface/peft>`_                                                                                                                   |  8k+  | 6         | ~15         | --:sup:`(3)` | 1 :sup:`(a)`       |     ✔️   |   ✔️  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| `adapter-transformers <https://github.com/adapter-hub/adapter-transformers>`_                                                                                   |  1k+  | 10        | ~15         | --:sup:`(3)` | 1 :sup:`(a)`       |     ❌   |   ✔️  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| `LLaMA-Efficient-Tuning <https://github.com/hiyouga/LLaMA-Efficient-Tuning>`_                                                                                   |  2k+  | 4         | 5           | ~20          | 1 :sup:`(a)`       |     ✔️   |   ❌  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| `Knowledge-Distillation-Zoo <https://github.com/AberHu/Knowledge-Distillation-Zoo>`_                                                                            |  1k+  | 20        | 2           | 2            | 1 :sup:`(b)`       |     ❌   |   ❌  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| `Easy Few-Shot Learning <https://github.com/sicara/easy-few-shot-learning>`_                                                                                    |  608  | 10        | 3           | 2            | 1 :sup:`(c)`       |     ❌   |   ❌  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| `Model Soups <https://github.com/mlfoundations/model-soups>`_                                                                                                   |  255  | 3         | 3           | 5            | 1 :sup:`(d)`       |     ❌   |   ❌  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
+| `Git Re-Basin <https://github.com/samuela/git-re-basin>`_                                                                                                       |  410  | 3         | 5           | 4            | 1 :sup:`(d)`       |     ❌   |   ❌  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+
+| :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` `(Ours) <https://github.com/zhangyikaii/LAMDA-ZhiJian>`_ |  ing  | 30+       | ~50         | 19           | 1 :sup:`(a,b,c,d)` |     ✔️   |   ✔️  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------+-------------+--------------+--------------------+----------+-------+ 
 
 
 .. toctree::
@@ -172,14 +210,26 @@ Why :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:l
    :caption: Tutorials
 
    tutorials/get_started
-   tutorials/customize_pre_trained_models
+   tutorials/config_with_one_line_blitz
+   tutorials/customize_pre_trained_model
    tutorials/customize_dataloader
+   tutorials/finetune_a_pre_trained_vit_from_timm
+   tutorials/finetune_a_custom_pre_trained_model
+   tutorials/advanced_extended_structure
+   tutorials/advanced_customize_knowledge_transfer
+   tutorials/advanced_customize_model_merging
 
 .. toctree::
    :maxdepth: 2
    :caption: API Docs
 
+   api/zhijian.args
+   api/zhijian.models
    api/zhijian.data
+   api/zhijian.trainer
+   api/architect
+   api/tuner
+   api/merger
 
 
 .. toctree::

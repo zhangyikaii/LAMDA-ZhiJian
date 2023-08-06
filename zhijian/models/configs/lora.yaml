@@ -1,0 +1,66 @@
+addins:
+  - {
+    name: LoRA, 
+    location: [[blocks, 0, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 1, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 2, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 3, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 4, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 5, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 6, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 7, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 8, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 9, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 10, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+  - {
+    name: LoRA, 
+    location: [[blocks, 11, attn, qkv]], 
+    hook: [[adapt, post]]
+    }
+
+reuse_keys:
+  - [addin]
+  - [head]
+  - [fc_norm]

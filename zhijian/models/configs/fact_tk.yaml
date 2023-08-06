@@ -1,0 +1,37 @@
+addins:
+  - {
+    name: FacT_tk, 
+    location: [[blocks, 0, attn, qkv], [blocks, 0, attn, proj], [blocks, 0, mlp, fc1], [blocks, 0, mlp, fc2],
+    [blocks, 1, attn, qkv], [blocks, 1, attn, proj], [blocks, 1, mlp, fc1], [blocks, 1, mlp, fc2], 
+    [blocks, 2, attn, qkv], [blocks, 2, attn, proj], [blocks, 2, mlp, fc1], [blocks, 2, mlp, fc2],
+    [blocks, 3, attn, qkv], [blocks, 3, attn, proj], [blocks, 3, mlp, fc1], [blocks, 3, mlp, fc2],
+    [blocks, 4, attn, qkv], [blocks, 4, attn, proj], [blocks, 4, mlp, fc1], [blocks, 4, mlp, fc2],
+    [blocks, 5, attn, qkv], [blocks, 5, attn, proj], [blocks, 5, mlp, fc1], [blocks, 5, mlp, fc2],
+    [blocks, 6, attn, qkv], [blocks, 6, attn, proj], [blocks, 6, mlp, fc1], [blocks, 6, mlp, fc2],
+    [blocks, 7, attn, qkv], [blocks, 7, attn, proj], [blocks, 7, mlp, fc1], [blocks, 7, mlp, fc2],
+    [blocks, 8, attn, qkv], [blocks, 8, attn, proj], [blocks, 8, mlp, fc1], [blocks, 8, mlp, fc2],
+    [blocks, 9, attn, qkv], [blocks, 9, attn, proj], [blocks, 9, mlp, fc1], [blocks, 9, mlp, fc2],
+    [blocks, 10, attn, qkv], [blocks, 10, attn, proj], [blocks, 10, mlp, fc1], [blocks, 10, mlp, fc2],
+    [blocks, 11, attn, qkv], [blocks, 11, attn, proj], [blocks, 11, mlp, fc1], [blocks, 11, mlp, fc2]],
+    hook: [[adapt_attn_1_0, post], [adapt_attn_2_0, post], [adapt_mlp_1_0, post], [adapt_mlp_2_0, post],
+    [adapt_attn_1_1, post], [adapt_attn_2_1, post], [adapt_mlp_1_1, post], [adapt_mlp_2_1, post],
+    [adapt_attn_1_2, post], [adapt_attn_2_2, post], [adapt_mlp_1_2, post], [adapt_mlp_2_2, post],
+    [adapt_attn_1_3, post], [adapt_attn_2_3, post], [adapt_mlp_1_3, post], [adapt_mlp_2_3, post],
+    [adapt_attn_1_4, post], [adapt_attn_2_4, post], [adapt_mlp_1_4, post], [adapt_mlp_2_4, post],
+    [adapt_attn_1_5, post], [adapt_attn_2_5, post], [adapt_mlp_1_5, post], [adapt_mlp_2_5, post],
+    [adapt_attn_1_6, post], [adapt_attn_2_6, post], [adapt_mlp_1_6, post], [adapt_mlp_2_6, post],
+    [adapt_attn_1_7, post], [adapt_attn_2_7, post], [adapt_mlp_1_7, post], [adapt_mlp_2_7, post],
+    [adapt_attn_1_8, post], [adapt_attn_2_8, post], [adapt_mlp_1_8, post], [adapt_mlp_2_8, post],
+    [adapt_attn_1_9, post], [adapt_attn_2_9, post], [adapt_mlp_1_9, post], [adapt_mlp_2_9, post],
+    [adapt_attn_1_10, post], [adapt_attn_2_10, post], [adapt_mlp_1_10, post], [adapt_mlp_2_10, post],
+    [adapt_attn_1_11, post], [adapt_attn_2_11, post], [adapt_mlp_1_11, post], [adapt_mlp_2_11, post]
+    ]
+    }
+
+fact_tk_scale: 1
+fact_tk_dim: 8
+
+reuse_keys:
+  - [addin]
+  - [fc_norm]
+  - [head]

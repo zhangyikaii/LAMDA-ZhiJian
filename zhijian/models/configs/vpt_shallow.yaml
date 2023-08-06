@@ -1,0 +1,15 @@
+addins:
+  - {
+    name: VPT, location: [[blocks, 0]], hook: [[cat_prompt_shallow, pre]]
+    }
+
+vpt_initiation: random
+vpt_project: -1
+vpt_deep: false
+vpt_dropout: 0.0
+vpt_num_tokens: 100
+
+reuse_keys:
+  - [addin]
+  - [head]
+  - [fc_norm]

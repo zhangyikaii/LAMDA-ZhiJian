@@ -1,0 +1,30 @@
+addins: []
+
+pretrained_url: ['/data/zhangyk/data/petl/model/model_1.pt',
+'/data/zhangyk/data/petl/model/model_2.pt', '/data/zhangyk/data/petl/model/model_3.pt', '/data/zhangyk/data/petl/model/model_4.pt',
+'/data/zhangyk/data/petl/model/model_5.pt', '/data/zhangyk/data/petl/model/model_6.pt', '/data/zhangyk/data/petl/model/model_7.pt',
+'/data/zhangyk/data/petl/model/model_8.pt', '/data/zhangyk/data/petl/model/model_9.pt', '/data/zhangyk/data/petl/model/model_10.pt',
+'/data/zhangyk/data/petl/model/model_11.pt', '/data/zhangyk/data/petl/model/model_12.pt', '/data/zhangyk/data/petl/model/model_13.pt',
+'/data/zhangyk/data/petl/model/model_14.pt', '/data/zhangyk/data/petl/model/model_15.pt', '/data/zhangyk/data/petl/model/model_16.pt',
+'/data/zhangyk/data/petl/model/model_17.pt', '/data/zhangyk/data/petl/model/model_18.pt', '/data/zhangyk/data/petl/model/model_19.pt',
+'/data/zhangyk/data/petl/model/model_20.pt', '/data/zhangyk/data/petl/model/model_21.pt', '/data/zhangyk/data/petl/model/model_22.pt',
+'/data/zhangyk/data/petl/model/model_23.pt', '/data/zhangyk/data/petl/model/model_24.pt', '/data/zhangyk/data/petl/model/model_25.pt',
+'/data/zhangyk/data/petl/model/model_26.pt', '/data/zhangyk/data/petl/model/model_27.pt', '/data/zhangyk/data/petl/model/model_28.pt',
+'/data/zhangyk/data/petl/model/model_29.pt', '/data/zhangyk/data/petl/model/model_30.pt', '/data/zhangyk/data/petl/model/model_31.pt',
+'/data/zhangyk/data/petl/model/model_32.pt', '/data/zhangyk/data/petl/model/model_33.pt', '/data/zhangyk/data/petl/model/model_34.pt',
+'/data/zhangyk/data/petl/model/model_35.pt', '/data/zhangyk/data/petl/model/model_36.pt', '/data/zhangyk/data/petl/model/model_37.pt',
+'/data/zhangyk/data/petl/model/model_38.pt', '/data/zhangyk/data/petl/model/model_39.pt', '/data/zhangyk/data/petl/model/model_40.pt',
+'/data/zhangyk/data/petl/model/model_41.pt', '/data/zhangyk/data/petl/model/model_42.pt', '/data/zhangyk/data/petl/model/model_43.pt',
+'/data/zhangyk/data/petl/model/model_44.pt', '/data/zhangyk/data/petl/model/model_45.pt', '/data/zhangyk/data/petl/model/model_46.pt',
+'/data/zhangyk/data/petl/model/model_47.pt', '/data/zhangyk/data/petl/model/model_48.pt', '/data/zhangyk/data/petl/model/model_49.pt',
+'/data/zhangyk/data/petl/model/model_50.pt', '/data/zhangyk/data/petl/model/model_51.pt', '/data/zhangyk/data/petl/model/model_52.pt',
+'/data/zhangyk/data/petl/model/model_53.pt', '/data/zhangyk/data/petl/model/model_54.pt', '/data/zhangyk/data/petl/model/model_55.pt',
+'/data/zhangyk/data/petl/model/model_56.pt', '/data/zhangyk/data/petl/model/model_57.pt', '/data/zhangyk/data/petl/model/model_58.pt',
+'/data/zhangyk/data/petl/model/model_59.pt', '/data/zhangyk/data/petl/model/model_60.pt', '/data/zhangyk/data/petl/model/model_61.pt',
+'/data/zhangyk/data/petl/model/model_62.pt', '/data/zhangyk/data/petl/model/model_63.pt', '/data/zhangyk/data/petl/model/model_64.pt',
+'/data/zhangyk/data/petl/model/model_65.pt', '/data/zhangyk/data/petl/model/model_66.pt', '/data/zhangyk/data/petl/model/model_67.pt',
+'/data/zhangyk/data/petl/model/model_68.pt', '/data/zhangyk/data/petl/model/model_69.pt', '/data/zhangyk/data/petl/model/model_70.pt',
+'/data/zhangyk/data/petl/model/model_71.pt']
+
+
+reuse_keys: []
