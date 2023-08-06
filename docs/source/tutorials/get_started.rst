@@ -84,7 +84,7 @@ Overview
 
 The figure below shows the three stages of our example. To run the following code, please click `[Open In Colab] <TODO.ipynb>`_.
 
-.. figure:: ../_static/images/tutorials_get_started_vit_lora.png
+.. figure:: https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/docs/source/_static/images/tutorials_get_started_vit_lora.png?raw=true
    :align: center
 
 

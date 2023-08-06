@@ -84,26 +84,21 @@ Overview
 Modules of Pre-trained Model in One Line description
 -------------------------
 
-'(LoRA.adapt): ...->(blocks[0:12].attn.qkv){inout1}->...',
+In the Architect module, to facilitate the modification of model structures, additional adaptive structures are incorporated into pre-trained models. :lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n` accepts a one-line serialized representation of the base pre-trained model, as exemplified in the Vision Transformer model from the :code:`timm` library in the following manner:
 
-在Architect模块中，为了更方便地修改模型结构，为预训练模型添加额外的适配结构，ZhiJian接受单行序列化地表示基础的预训练模型，例如下图的timm库中的Vision Transformer模型，我们可以用如下的单行配置来表示它：
+.. figure:: ../_static/images/tutorial_one_line_config.png
+   :align: center
 
-:lamdaorange:`Z`:lamdablue:`h`:lamdablue:`i`:lamdaorange:`J`:lamdablue:`i`:lamdablue:`a`:lamdablue:`n`
 
-其中()括号内表示基础预训练模型的模块，在括号内支持用'.'访问符来TODO
+The modules within the parentheses :code:`()` represent the base pre-trained model, and the dot :code:`.` is used as a access operator.
 
-箭头表示模块间的连接，...表示缺省的模块，允许用箭头连接部分结构，如上述代码所示，我们只表示了blocks TODO模块
-
+The arrows :code:`->` indicate the connections between modules, and ellipsis :code:`...` represents default modules. Partial structures can be connected with arrows.
 
 Extended Add-in Module with Entry Points
 -------------------------
 
-我们用(): 来表示一个额外的适配结构，其中'.'之后是额外结构的主要forward函数，数据流入模块后将主要经过该方法。
+We use :code:`(): ` to denote an additional adaptive structure, where the part after the dot :code:`.` represents the main forward function of the extra structure. The data flows into the module and primarily passes through this method.
 
-我们用{}来表示额外结构对于预训练模型的接入点，包括源模型特征的入口和添加结构处理后特征的返回点
+We use :code:`{}` to indicate the entry points of the extra structure into the pre-trained model, encompassing the entry of source model features and the return points of features after the added structure is processed.
 
-
-总结
--------------------------
-
-如上配置后，ZhiJian支持无缝地修改预训练模型的结构，它将自动识别定义在:code:`zhijian\models\addin`中的额外结构，完成预训练网络的搭建
+With the aforementioned configuration, ZhiJian seamlessly supports the modification of pre-trained model structures. It automatically recognizes the additional structures defined in :code:`zhijian\models\addin`, enabling the construction of pre-trained models.
