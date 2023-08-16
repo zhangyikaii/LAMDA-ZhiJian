@@ -21,7 +21,7 @@
     <p>
     <p>
         <b>English</b> |
-        <a href="https://github.com/baichuan-inc/baichuan-7B/blob/main/README_CN.md">中文</a>
+        <a href="https://github.com/zhangyikaii/LAMDA-ZhiJian/edit/main/README_CN.md">中文</a>
     <p>
 </h4>
 
@@ -31,7 +31,7 @@
 **The rapid progress** in deep learning has led to the emergence of **numerous open-source Pre-Trained Models (PTMs)** on platforms like PyTorch, TensorFlow, and HuggingFace Transformers. Leveraging these PTMs for specific tasks empowers them to handle objectives effectively, creating valuable resources for the machine-learning community. **Reusing PTMs is vital in enhancing target models' capabilities and efficiency**, achieved through adapting the architecture, customizing learning on target data, or devising optimized inference strategies to leverage PTM knowledge.
 
 
-![overview](https://github.com/zhangyikaii/LAMDA-ZhiJian/raw/main/assests/overview.png?raw=true)
+![overview](./assests/overview.png)
 
 🔥 **To facilitate a holistic consideration of various model reuse strategies**, ZhiJian categorizes model reuse methods into *three* modules: **Architect**, **Tuner**, and **Merger**, aligning with the stages of **model preparation**, **model learning**, and **model inference** on the target task, respectively. **The provided interface methods include**:
 
@@ -368,7 +368,7 @@
 
 ## Why ZhiJian?
 
-![architecture](https://github.com/zhangyikaii/LAMDA-ZhiJian/raw/main/assests/architecture.png?raw=true)
+![architecture](./assests/architecture.png)
 
 <table>
   <tr>
@@ -529,7 +529,7 @@
 
 ### 📦 Reproducible SoTA Results
 
-**ZhiJian** fixed the random seed to ensure reproducibility of the results, with only minor variations across different devices.
+**ZhiJian** fixed the random seed to ensure the reproducibility of the results, with only minor variations across different devices.
 Partial results are displayed below. For more, please click [[here]](TODO)
 
 &nbsp;
