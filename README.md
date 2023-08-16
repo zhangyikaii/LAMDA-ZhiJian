@@ -26,13 +26,14 @@
 </h4>
 
 
-**ZhiJian** ([**执简**驭繁](https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81)) is a *comprehensive* and *user-friendly* `PyTorch`-based **toolbox** for leveraging **foundation pre-trained models** and their **fine-tuned counterparts** to *extract* knowledge and *expedite* learning in real-world tasks, *i.e.*, **serving the Model Reuse tasks**.
+**ZhiJian** ([**执简**驭繁](https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81)) is a *comprehensive* and *user-friendly* `PyTorch`-based **Model Reuse toolbox** for leveraging **foundation pre-trained models** and their **fine-tuned counterparts** to *extract* knowledge and *expedite* learning in real-world tasks.
 
 **The rapid progress** in deep learning has led to the emergence of **numerous open-source Pre-Trained Models (PTMs)** on platforms like PyTorch, TensorFlow, and HuggingFace Transformers. Leveraging these PTMs for specific tasks empowers them to handle objectives effectively, creating valuable resources for the machine-learning community. **Reusing PTMs is vital in enhancing target models' capabilities and efficiency**, achieved through adapting the architecture, customizing learning on target data, or devising optimized inference strategies to leverage PTM knowledge.
 
+
 ![overview](https://github.com/zhangyikaii/LAMDA-ZhiJian/raw/main/assests/overview.png?raw=true)
 
-🔥 **To facilitate a holistic consideration of various model reuse strategies**, ZhiJian categorizes model reuse methods into *three* sequential modules: **Architect**, **Tuner**, and **Merger**, aligning with the stages of **model preparation**, **model learning**, and **model inference** on the target task, respectively. **The provided interface methods include**:
+🔥 **To facilitate a holistic consideration of various model reuse strategies**, ZhiJian categorizes model reuse methods into *three* modules: **Architect**, **Tuner**, and **Merger**, aligning with the stages of **model preparation**, **model learning**, and **model inference** on the target task, respectively. **The provided interface methods include**:
 
 <details>
 <summary style="margin-left: 2px;"><b>A</b>rchitect Module [<em>Click to Expand</em>]<p style="margin-left: 12px;">The Architect module involves <b>modifying the pre-trained model to fit the target task</b>, and reusing certain parts of the pre-trained model while introducing new learnable parameters with specialized structures.</p></summary>
