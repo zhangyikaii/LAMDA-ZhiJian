@@ -129,8 +129,8 @@ def prepare_specific_parser(parser):
                     help='warmup learning rate (default: 1e-5)')
     group.add_argument('--min-lr', type=float, default=0, metavar='LR',
                     help='lower lr bound for cyclic schedulers that hit 0 (default: 0)')
-    group.add_argument('--epochs', type=int, default=300, metavar='N',
-                    help='number of epochs to train (default: 300)')
+    # group.add_argument('--epochs', type=int, default=300, metavar='N',
+    #                 help='number of epochs to train (default: 300)')
     group.add_argument('--epoch-repeats', type=float, default=0., metavar='N',
                     help='epoch repeat multiplier (number of times to repeat dataset epoch per train epoch).')
     group.add_argument('--start-epoch', default=None, type=int, metavar='N',

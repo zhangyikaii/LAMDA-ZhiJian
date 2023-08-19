@@ -16,7 +16,8 @@ from torchvision.datasets.folder import ImageFolder, default_loader
 
 import re
 
-from typing import Dict, Optional, Sequence, Union, List, Literal
+from typing import Dict, Optional, Sequence, Union, List
+from typing_extensions import Literal
 
 from transformers import DataCollatorWithPadding, BatchEncoding
 from transformers.tokenization_utils import PreTrainedTokenizer
@@ -25,9 +26,6 @@ from transformers import Seq2SeqTrainingArguments
 
 from itertools import chain
 import hashlib
-
-from datasets import Dataset, concatenate_datasets, load_dataset
-
 
 
 class TestAugTransform:
@@ -38,40 +36,19 @@ class TestAugTransform:
         return [self.transform(x) for _ in range(self.aug_times)]
 
 def get_in_train_transform(dataset, crop_size, mean, std):
-    if dataset in ['CLEVR-Distance', 'CLEVR-Count', 'smallNORB-Azimuth', 'smallNORB-Elevation', 'dSprites-Orientation', 'dSprites-Location', 'KITTI']:
-         return transforms.Compose([
-            transforms.Resize((224, 224), interpolation=3),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
-    else:
-        return transforms.Compose([
-            transforms.RandomResizedCrop(crop_size),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=mean, std=std
-            )
+    return transforms.Compose([
+        transforms.RandomResizedCrop(crop_size),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD)
         ])
 
 def get_in_test_transform(dataset, resize_size, crop_size, mean, std):
-    if dataset in ['CLEVR-Distance', 'CLEVR-Count', 'smallNORB-Azimuth', 'smallNORB-Elevation', 'dSprites-Orientation', 'dSprites-Location', 'KITTI']:
-        return transforms.Compose([
-            transforms.Resize((224, 224), interpolation=3),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD)])
-    else:
-        if resize_size is None and crop_size is None:
-            return transforms.Compose([
-                torchvision.transforms.ToTensor(),
-                torchvision.transforms.Normalize(mean=mean, std=std),
-            ])
-        return transforms.Compose([
-            transforms.Resize(resize_size),
-            transforms.CenterCrop(crop_size),
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=mean, std=std
-            )
+    return transforms.Compose([
+        transforms.Resize(resize_size),
+        transforms.CenterCrop(crop_size),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD)
         ])
 
 def prepare_vision_dataloader(args, model_args, logger=None):
@@ -103,49 +80,56 @@ def prepare_vision_dataloader(args, model_args, logger=None):
         shuffle=False
     ) if val_dataset is not None else None
 
-
     return train_loader, val_loader, num_classes
 
 
-class general_vtab_dataset(ImageFolder):
+class VTABDataset(ImageFolder):
     def __init__(self, name, root, train=True, transform=None, **kwargs):
-        """write the description of the function here, like this is the ...
-
-        write the description of the function here
-
-        :param a1: write parameter a1 description here
-
-        :return: write return thing here
-        """
         self.dataset_root = root
         self.loader = default_loader
         self.target_transform = None
         self.transform = transform
 
         if 'VTAB-1k' in name:
-            train_list_path = os.path.join(self.dataset_root, 'train800val200.txt')
-            test_list_path = os.path.join(self.dataset_root, 'test.txt')
+            if train:
+                data_list_path = os.path.join(self.dataset_root, 'train800val200.txt')
+            else:
+                data_list_path = os.path.join(self.dataset_root, 'test.txt')
         elif 'VTAB-tuning' in name:
-            train_list_path = os.path.join(self.dataset_root, 'train800.txt')
-            test_list_path = os.path.join(self.dataset_root, 'val200.txt')
+            if train:
+                data_list_path = os.path.join(self.dataset_root, 'train800.txt')
+            else:
+                data_list_path = os.path.join(self.dataset_root, 'val200.txt')
         else:
             raise NotImplementedError
 
         self.samples = []
-        if train:
-            with open(train_list_path, 'r') as f:
-                for line in f:
-                    img_name = line.split(' ')[0]
-                    label = int(line.split(' ')[1])
-                    self.samples.append((os.path.join(root,img_name), label))
-        else:
-            with open(test_list_path, 'r') as f:
-                for line in f:
-                    img_name = line.split(' ')[0]
-                    label = int(line.split(' ')[1])
-                    self.samples.append((os.path.join(root,img_name), label))
+        with open(data_list_path, 'r') as f:
+            for line in f:
+                img_name = line.split(' ')[0]
+                label = int(line.split(' ')[1])
+                self.samples.append((os.path.join(root,img_name), label))
 
-class imagenet_dataset(ImageFolder):
+class VMTDataset(ImageFolder):
+    def __init__(self, root, train=True, transform=None, **kwargs):
+        self.loader = default_loader
+        self.target_transform = None
+        base_dir = root
+        if train:
+            path = os.path.join(root, 'vmt/train19x800val19x200.txt')
+        else:
+            path = os.path.join(root, 'vmt/test.txt')
+
+        self.transform = transform
+        self.samples = []
+        with open(path, 'r') as f:
+            tmp = [i.strip() for i in f.readlines()]
+        for line in tmp:
+            img_name = line.split(' ')[0]
+            label = int(line.split(' ')[1])
+            self.samples.append((os.path.join(base_dir, img_name), label))
+
+class ImageNetDataset(ImageFolder):
     def __init__(self, root, train=True, transform=None):
         if train:
             root = os.path.join(root, 'train')
@@ -153,7 +137,7 @@ class imagenet_dataset(ImageFolder):
             root = os.path.join(root, 'val')
         super().__init__(root, transform)
 
-class general_imageneta_dataset(ImageFolder):
+class ImageNetADataset(ImageFolder):
     def __init__(self, root, train=True, transform=None):
         super().__init__(root, transform)
 
@@ -163,19 +147,21 @@ def get_dataset(name, data_path, train_transform, val_transform, logger=None):
         return torchvision.datasets.ImageFolder(os.path.join(data_path, train_prefix), transform=train_transform), torchvision.datasets.ImageFolder(os.path.join(data_path, test_prefix), transform=val_transform)
 
     if 'VTAB-1k' in name or 'VTAB-tuning' in name:
-        train_dataset, val_dataset = general_vtab_dataset(name, data_path, train=True, transform=train_transform), general_vtab_dataset(name, data_path, train=False, transform=val_transform)
+        train_dataset, val_dataset = VTABDataset(name, data_path, train=True, transform=train_transform), VTABDataset(name, data_path, train=False, transform=val_transform)
         num_classes = DATASET2NUM_CLASSES[name]
-
+    elif name == 'VMT':
+        train_dataset, val_dataset = VMTDataset(os.path.dirname(data_path), train=True, transform=train_transform), VMTDataset(os.path.dirname(data_path), train=False, transform=val_transform)
+        num_classes = DATASET2NUM_CLASSES[name]
     elif name == 'ImageNet':
-        train_dataset, val_dataset = imagenet_dataset(data_path, train = True, transform= train_transform), imagenet_dataset(data_path, train=False, transform=val_transform)
+        train_dataset, val_dataset = ImageNetDataset(data_path, train=True, transform=train_transform), ImageNetDataset(data_path, train=False, transform=val_transform)
         num_classes = 1000
     elif name == 'ImageNet-A':
         train_dataset = None
-        val_dataset = general_imageneta_dataset(data_path, transform=val_transform)
+        val_dataset = ImageNetADataset(data_path, transform=val_transform)
         num_classes = 200
     elif name == 'ImageNet-R':
         train_dataset = None
-        val_dataset = general_imageneta_dataset(data_path, transform=val_transform)
+        val_dataset = ImageNetADataset(data_path, transform=val_transform)
         num_classes = 200
     elif name == 'CIFAR-10':
         train_dataset = torchvision.datasets.CIFAR10(root=data_path, train=True, download=False, transform=train_transform)
@@ -421,7 +407,8 @@ def prepare_llm_dataset(
     model_args,
     data_args,
     logger=None
-) -> Dataset:
+):
+    from datasets import Dataset, concatenate_datasets, load_dataset
 
     def checksum(file_path, hash):
         with open(file_path, "rb") as datafile:
@@ -577,13 +564,13 @@ class DynamicDataCollatorWithPadding(DataCollatorWithPadding):
 
 
 def preprocess_llm_dataset(
-    dataset: Dataset,
+    dataset,
     tokenizer: PreTrainedTokenizer,
     data_args,
     training_args: Seq2SeqTrainingArguments,
     stage: Literal["pt", "sft", "rm", "ppo"],
     logger=None
-) -> Dataset:
+):
 
     column_names = list(dataset.column_names)
     prompt_template = Template(data_args.prompt_template)

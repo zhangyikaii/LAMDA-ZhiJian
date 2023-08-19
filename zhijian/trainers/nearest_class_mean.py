@@ -87,6 +87,7 @@ class Trainer(Base_Trainer):
 
     def fit(self):
         self.prototypes = compute_prototypes(self.model, self.train_loader, self.num_classes, self.device, self.verbose, self.logger)
+        self.test()
 
     def test(self, epoch=0):
         batch_time_m, acc1_m, acc5_m = AverageMeter(), AverageMeter(), AverageMeter()
@@ -123,6 +124,19 @@ class Trainer(Base_Trainer):
                     pbar.set_description(('%11s' * 2 + '%11.4g' * 3) %
                                          (f'{epoch + 1}/{self.max_epoch}', mem, batch_time_m.avg, acc1_m.avg, acc5_m.avg))
 
-        self.logger.info(f'***   Best results: [Acc@1: {acc1_m.avg}], [Acc@5: {acc5_m.avg}]')
 
-        return acc1_m.avg, acc5_m.avg
+        is_updated = False
+
+        if acc1_m.avg >= self.results.val_best_acc1:
+            self.results.update(
+                val_best_acc1=acc1_m.avg,
+                val_best_acc5=acc5_m.avg,
+                val_best_epoch=epoch
+                )
+            is_updated = True
+
+        self.logger.info(f'***   Epoch {epoch + 1} results: [Acc@1: {acc1_m.avg}], [Acc@5: {acc5_m.avg}]')
+
+        if self.alchemy:
+            self.logger.log_one_line(str(self.results), 'results.csv')
+        return is_updated

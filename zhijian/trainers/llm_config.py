@@ -1,8 +1,9 @@
 import os
 import json
 import torch
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, List, Optional
 from dataclasses import asdict, dataclass, field
+from typing_extensions import Literal
 
 
 @dataclass

@@ -177,7 +177,7 @@ def get_command_line_parser():
     parser.add_argument('--reuse-keys', nargs='*', default=None)
     parser.add_argument('--reuse-keys-blitz', type=str, default=None)
 
-    parser.add_argument('--batch-size', type=int, default=8)
+    parser.add_argument('--batch-size', type=int, default=128)
     parser.add_argument('--max-epoch', type=int, default=30)
 
     parser.add_argument('--optimizer', type=str, default='adam')
@@ -194,11 +194,14 @@ def get_command_line_parser():
     parser.add_argument('--gpu', type=str, default='3')
     parser.add_argument('--num-workers', type=int, default=8)
 
+
+    parser.add_argument('--test-interval', type=int, default=30)
     parser.add_argument('--log-url', type=str, default='your/log/directory')
     parser.add_argument('--time-str', type=str, default='')
     parser.add_argument('--verbose', action='store_true', default=False)
 
     parser.add_argument('--only-do-test', action='store_true', default=False)
+    parser.add_argument('--alchemy', action='store_true', default=False)
 
 
     args, _ = parser.parse_known_args()
@@ -370,6 +373,20 @@ class AverageMeter(object):
         self.count += n
         self.avg = self.sum / self.count
 
+class BestInfo(object):
+    def __init__(self, args, **kwargs):
+        self.val_best_acc1 = 0 if 'val_best_acc1' not in kwargs.keys() else kwargs['val_best_acc1']
+        self.val_best_acc5 = 0 if 'val_best_acc5' not in kwargs.keys() else kwargs['val_best_acc5']
+        self.val_best_epoch = 0 if 'val_best_epoch' not in kwargs.keys() else kwargs['val_best_epoch']
+        self.args = args
+
+    def update(self, **kwargs):
+        for k in kwargs.keys():
+            if kwargs[k] >= getattr(self, k):
+                setattr(self, k, kwargs[k])
+
+    def __str__(self):
+        return f'{self.args.model},{self.args.config},{self.args.dataset},{self.args.training_mode},{self.args.optimizer},{self.args.lr},{self.args.wd},{self.args.log_url},{self.val_best_epoch},{self.val_best_acc1},{self.val_best_acc5}'
 
 def accuracy(output, target, topk=(1,)):
     """Computes the accuracy over the k top predictions for the specified values of k"""
@@ -543,10 +560,13 @@ class Logger(object):
 
 class LogHandle(object):
     def __init__(self, args):
-        self.args = args
+        self.log_url = args.log_url
+        self.time_str = args.time_str
         self.save_path = Path(os.path.join(args.log_url, args.time_str))
         self.save_path.mkdir(parents=True, exist_ok=True)
         self.logger = Logger(args, self.save_path, 'INFO')
+
+        self.args = args
 
     def save_model(self, model, optimizer, epoch, save_file='best.pt'):
         state = {
@@ -556,9 +576,7 @@ class LogHandle(object):
             'epoch': epoch,
             'time_str': self.args.time_str
         }
-        save_dir = Path(self.save_path)
-        save_dir.mkdir(parents=True, exist_ok=True)
-        torch.save(state, os.path.join(save_dir, save_file))
+        torch.save(state, os.path.join(self.save_path, save_file))
 
     def warning(self, message):
         self.logger.warning(message)
@@ -574,9 +592,12 @@ class LogHandle(object):
             for i in contents:
                 f.write(f'{epoch},{i}\n')
 
-    def log_one_line(self, content, save_abs_file):
-        with open(os.path.join(save_abs_file), 'a') as f:
-            f.write(f'{content}\n')
+    def log_one_line(self, content, save_csv_file):
+        with open(os.path.join(self.log_url, save_csv_file), 'a') as f:
+            f.write(f'{self.time_str},{content}\n')
+    
+    def log_pt(self, data, save_pt_file):
+        torch.save(data, os.path.join(self.save_path, save_pt_file))
 
     def add_scalar(self, key, value, counter):
         self.logger.add_scalar(key, value, counter)

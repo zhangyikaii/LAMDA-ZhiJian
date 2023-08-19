@@ -8,19 +8,17 @@ import datetime
 
 import sys
 import torch
-from typing import Literal, Tuple
+from typing import Tuple
+from typing_extensions import Literal
 
 import transformers
 from transformers import HfArgumentParser, Seq2SeqTrainingArguments
-
-import datasets
 
 from zhijian.trainers.llm_config import (
     ModelArguments,
     DataTrainingArguments,
     FinetuningArguments,
 )
-
 
 def get_args(**kwargs):
     args, parser = get_command_line_parser()
@@ -38,6 +36,7 @@ def prepare_llm_args(
     args, stage: Literal["pt", "sft", "rm", "ppo"], logger=None
 ) -> Tuple[ModelArguments, DataTrainingArguments, Seq2SeqTrainingArguments, FinetuningArguments]:
 
+    import datasets
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, Seq2SeqTrainingArguments, FinetuningArguments))
 
     if len(sys.argv) == 2 and sys.argv[1].endswith(".json"): # Provide arguments with a json file.

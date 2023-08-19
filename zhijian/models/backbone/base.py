@@ -14,7 +14,8 @@ from copy import deepcopy
 import os
 from zhijian.trainers.llm_config import FinetuningArguments
 from transformers import AutoTokenizer, AutoConfig, BitsAndBytesConfig, AutoModelForCausalLM
-from typing import Literal, Optional, Tuple
+from typing import Optional, Tuple
+from typing_extensions import Literal
 from transformers.modeling_utils import PreTrainedModel
 from transformers.tokenization_utils import PreTrainedTokenizer
 from transformers.utils.versions import require_version

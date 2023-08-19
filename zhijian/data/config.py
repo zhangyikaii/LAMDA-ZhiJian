@@ -24,6 +24,7 @@ DATA_PATH_SUB_DIR = {
     'dSprites-Orientation': 'dsprites_ori',
     'smallNORB-Azimuth': 'smallnorb_azi',
     'smallNORB-Elevation': 'smallnorb_ele',
+    'VMT': 'vmt'
 }
 
 add_prefix_to_dict(DATA_PATH_SUB_DIR, ['VTAB-1k.', 'VTAB-tuning.'])
@@ -114,6 +115,7 @@ DATASET2NUM_CLASSES = {
     'dSprites-Orientation': 16,
     'smallNORB-Azimuth': 18,
     'smallNORB-Elevation': 9,
+    'VMT': 543
 }
 
 

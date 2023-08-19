@@ -12,4 +12,3 @@ if __name__ == '__main__':
 
     trainer = prepare_trainer(args)
     trainer.fit()
-    trainer.test()

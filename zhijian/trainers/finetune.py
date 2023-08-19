@@ -2,7 +2,7 @@ from zhijian.models.backbone.base import prepare_model, prepare_hook, prepare_gr
 from zhijian.models.addin.base import prepare_addins
 from zhijian.data.base import prepare_vision_dataloader
 from zhijian.models.configs.base import TQDM_BAR_FORMAT
-from zhijian.models.utils import AverageMeter, accuracy, PrepareFunc, LogHandle, set_seed
+from zhijian.models.utils import AverageMeter, accuracy, PrepareFunc, LogHandle, set_seed, BestInfo
 
 import time
 import torch
@@ -75,23 +75,28 @@ class Trainer(object):
         else:
             self.criterion = criterion
 
+        self.results = BestInfo(args)
 
         self.lr, self.batch_size = args.lr, args.batch_size
         self.verbose, self.max_epoch, self.only_do_test = args.verbose, args.max_epoch, args.only_do_test
         self.dataset = args.dataset
+        self.test_interval = args.test_interval
+        self.alchemy = args.alchemy
 
         self.args = args
 
         total = sum([param.nelement() for param in self.model.parameters()])
         trainable_params = filter(lambda p: p.requires_grad, self.model.parameters())
         trainable = sum(p.nelement() for p in trainable_params)
-        self.logger.info("Trainable/total parameters of the model: %.2fM / %.2fM (%.5f%%)" % (trainable/1e6, total/1e6, trainable / total * 100))
+        self.logger.info("The trainable / total parameters of the model: %.2fM / %.2fM (%.5f%%)" % (trainable/1e6, total/1e6, trainable / total * 100))
 
+        if self.alchemy:
+            with open(os.path.join(self.logger.save_path, "pid.txt"), "w") as f:
+                f.write(str(os.getpid()))
 
     def fit(self):
         if self.only_do_test:
             return
-        best_val_acc1, best_epoch = 0, 0
 
         for epoch in range(self.max_epoch):
             self.model.train()
@@ -134,20 +139,23 @@ class Trainer(object):
 
             self.lr_scheduler.step()
 
-            val_acc1, val_acc5 = self.test(epoch)
+            if (epoch + 1) % self.test_interval == 0:
+                is_updated = self.test(epoch)
 
-            if val_acc1 > best_val_acc1:
-                best_val_acc1 = val_acc1
-                best_val_acc5 = val_acc5
-                self.logger.save_model(
-                    model=deepcopy(self.model).to('cpu'),
-                    optimizer=self.optimizer,
-                    epoch=epoch,
-                    save_file='best.pt'
-                )
+                if not self.alchemy and is_updated:
+                    self.logger.save_model(
+                        model=deepcopy(self.model).to('cpu'),
+                        optimizer=self.optimizer,
+                        epoch=epoch,
+                        save_file='best.pt'
+                    )
+
+        if self.alchemy:
+            self.logger.log_one_line(str(self.results), 'results.csv')
 
     def test(self, epoch=0):
         batch_time_m, acc1_m, acc5_m = AverageMeter(), AverageMeter(), AverageMeter()
+        test_outputs, targets = [], []
 
         pbar = enumerate(self.val_loader)
         if self.verbose:
@@ -169,6 +177,9 @@ class Trainer(object):
                 acc1_m.update(acc1.item())
                 acc5_m.update(acc5.item())
 
+                test_outputs.append(outputs.detach().cpu())
+                targets.append(target.detach().cpu())
+
                 batch_time_m.update(time.time() - end)
 
                 end = time.time()
@@ -177,6 +188,18 @@ class Trainer(object):
                     pbar.set_description(('%11s' * 2 + '%11.4g' * 3) %
                                          (f'{epoch + 1}/{self.max_epoch}', mem, batch_time_m.avg, acc1_m.avg, acc5_m.avg))
 
-        self.logger.info(f'***   Best results: [Acc@1: {acc1_m.avg}], [Acc@5: {acc5_m.avg}]')
+        is_updated = False
 
-        return acc1_m.avg, acc5_m.avg
+        if acc1_m.avg >= self.results.val_best_acc1:
+            self.results.update(
+                val_best_acc1=acc1_m.avg,
+                val_best_acc5=acc5_m.avg,
+                val_best_epoch=epoch
+                )
+            is_updated = True
+            if self.alchemy:
+                self.logger.log_pt(torch.argmax(torch.cat(test_outputs), dim=1), 'test_outputs.pt')
+                self.logger.log_pt(torch.cat(targets), 'targets.pt')
+
+        self.logger.info(f'***   Epoch {epoch + 1} results: [Acc@1: {acc1_m.avg}], [Acc@5: {acc5_m.avg}]')
+        return is_updated

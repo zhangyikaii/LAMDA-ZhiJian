@@ -166,7 +166,7 @@ class REPAIR(object):
                 # Store the statistics
                 mean_train_loss.add(loss.item(), weight=len(batch_x))
             
-            self.logger.info(f"Epoch {epoch}: {mean_train_loss.value()}")
+            self.logger.info(f"Epoch {epoch + 1}: {mean_train_loss.value()}")
 
         return geometric_model
 
