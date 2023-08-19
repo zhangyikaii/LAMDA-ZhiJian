@@ -75,13 +75,6 @@
   </details>
 
   <details>
-  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Head2Toe</strong>, <em>Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2201.03529.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-  <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-  </div>
-  </details>
-
-  <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Scaling &amp; Shifting</strong>, <em>Scaling &amp; Shifting Your Features: A New Baseline for Efficient Model Tuning.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2210.08823.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
@@ -115,19 +108,12 @@
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
-  
-  <details>
-    <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;VQT</strong>, <em>Visual Query Tuning: Towards Effective Usage of Intermediate Representations for Parameter and Memory Efficient Transfer Learning.</em> In: CVPR'23. <a href="https://arxiv.org/pdf/2212.03220.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
-    <div style="margin-left: 30px;">
-      <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
-    </div>
-  </details>
 </details>
 
 <details>
 <summary style="margin-left: 2px;"><b>T</b>uner Module [<em>Click to Expand</em>]<p style="margin-left: 12px;">The Tuner module focuses on <b>training the target model with guidance from pre-trained model knowledge</b> to expedite the optimization process, <em>e.g.</em>, via adjusting objectives, optimizers, or regularizers.</p></summary>
   <details>
-  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Knowledge Transfer and Matching</strong>, <em>NeC4.5: neural ensemble based C4.5.</em> In: IEEE Trans. Knowl. Data Eng. 2004. <a href="https://ieeexplore.ieee.org/document/1294896">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Knowledge Transfer</strong>, <em>NeC4.5: neural ensemble based C4.5.</em> In: IEEE Trans. Knowl. Data Eng. 2004. <a href="https://ieeexplore.ieee.org/document/1294896">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
@@ -256,6 +242,20 @@
   </details>
 
   <details>
+  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Head2Toe</strong>, <em>Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2201.03529.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <div style="margin-left: 30px;">
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+  </div>
+  </details>
+  
+  <details>
+    <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;VQT</strong>, <em>Visual Query Tuning: Towards Effective Usage of Intermediate Representations for Parameter and Memory Efficient Transfer Learning.</em> In: CVPR'23. <a href="https://arxiv.org/pdf/2212.03220.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+    <div style="margin-left: 30px;">
+      <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    </div>
+  </details>
+
+  <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;via Optimal Transport</strong>, <em>Model Fusion via Optimal Transport.</em> In: NeurIPS'20. <a href="https://arxiv.org/pdf/1910.05653.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
     <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
@@ -314,13 +314,13 @@
   + Other popular projects, *e.g.*, [vit-pytorch](https://github.com/lucidrains/vit-pytorch) (stars [14k](https://github.com/lucidrains/vit-pytorch/stargazers)).
   + Large Language Model, including [baichuan](https://huggingface.co/baichuan-inc/baichuan-7B), [LLaMA](https://github.com/facebookresearch/llama), and [BLOOM](https://huggingface.co/bigscience/bloom).
 + **Extremely easy** to get started and **customize**
-  + Get started with a 10 minute blitz [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](TODO)
-  + Customize datasets and pre-trained models with step-by-step instructions [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](TODO)
-  + Feel free to create a novel approach for reusing pre-trained model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](TODO)
+  + Get started with a 10 minute blitz [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ho1R6h5FEg6zXBJVauXcBnSpBrfi6JmN?usp=sharing)
+  + Customize datasets and pre-trained models with step-by-step instructions [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PKy1U7DyAy5AJYIBv5VEoHWEDJ6NCwTZ?usp=sharing)
+  + Feel free to create a novel approach for reusing pre-trained model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vHQjlaAGhoeiTVAwOrSQCraAlDvWOlh9?usp=sharing)
 + **Concise** things do **big**
   + Only ~5000 lines of the base code, with incorporating method like building *LEGO* blocks
   + **State-of-the-art** results on [VTAB benchmark](https://google-research.github.io/task_adaptation/) with approximately **10k** experiments [[here]](https://github.com/zhangyikaii/LAMDA-ZhiJian/tree/main/results)
-  + Support friendly guideline and comprehensive documentation to custom dataset and pre-trained model [[here]](TODO)
+  + Support friendly guideline and comprehensive documentation to custom dataset and pre-trained model [[here]](https://zhijian.readthedocs.io/en/latest/tutorials/get_started.html)
 
 > "ZhiJian" in Chinese means handling complexity with concise and efficient methods. Given the variations in pre-trained models and the deployment overhead of full parameter fine-tuning, ZhiJian represents a solution that is easily reusable, maintains high accuracy, and maximizes the potential of pre-trained models.
 > 
@@ -527,11 +527,6 @@
 
 &nbsp;
 
-## Installation for Research
-
-
-&nbsp;
-
 ## Contributing
 
 **ZhiJian** is currently in active development, and we warmly welcome any contributions aimed at enhancing capabilities. Whether you have insights to share regarding pre-trained models, data, or innovative reuse methods, we eagerly invite you to join us in making **ZhiJian** even better. If you want to submit your valuable contributions, please click [here](https://zhijian.readthedocs.io/en/latest/contributing.html).
@@ -541,12 +536,12 @@
 ## Citing ZhiJian
 
 ```latex
-@article{zhijian,
-  arxiv cite todo
+@misc{Charles2013,
+  author = {ZhiJian Contributors},
+  title = {LAMDA-ZhiJian},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/zhangyikaii/LAMDA-ZhiJian}}
 }
 ```
-
-&nbsp;
-
-## Acknowledgment
-
