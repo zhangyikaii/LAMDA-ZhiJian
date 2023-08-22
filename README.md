@@ -230,77 +230,77 @@
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Nearest Class Mean</strong>, <em>Generalizing to new classes at near-zero cost.</em> In: TPAMI'13. <a href="https://ieeexplore.ieee.org/document/6517188">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/ncm.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;SimpleShot</strong>, <em>SimpleShot: Revisiting Nearest-Neighbor Classification for Few-Shot Learning.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1911.04623.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/simpleshot.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Head2Toe</strong>, <em>Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2201.03529.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/head2toe.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
   
   <details>
     <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;VQT</strong>, <em>Visual Query Tuning: Towards Effective Usage of Intermediate Representations for Parameter and Memory Efficient Transfer Learning.</em> In: CVPR'23. <a href="https://arxiv.org/pdf/2212.03220.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
     <div style="margin-left: 30px;">
-      <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+      <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/vqt.png?raw=true" alt="WSFG" width="auto" height="300px" />
     </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;via Optimal Transport</strong>, <em>Model Fusion via Optimal Transport.</em> In: NeurIPS'20. <a href="https://arxiv.org/pdf/1910.05653.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/otfusion.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Model Soup</strong> <em>Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time.</em> In: ICML'22. <a href="https://arxiv.org/pdf/2203.05482.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/modelsoup.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Fisher Merging</strong> <em>Merging Models with Fisher-Weighted Averaging.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2111.09832.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/fishermerging.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Deep Model Reassembly</strong> <em>Deep Model Reassembly.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2210.17409.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/dmr.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;REPAIR</strong> <em>REPAIR: REnormalizing Permuted Activations for Interpolation Repair.</em> In: ICLR'23. <a href="https://arxiv.org/pdf/2211.08403.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/repair.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Git Re-Basin</strong> <em>Git Re-Basin: Merging Models modulo Permutation Symmetries.</em> In: ICLR'23. <a href="https://arxiv.org/pdf/2209.04836.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/gitrebasin.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;ZipIt</strong> <em>ZipIt! Merging Models from Different Tasks without Training.</em> In: ICLR'23. <a href="https://arxiv.org/pdf/2305.03053.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/zipit.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 </details>
