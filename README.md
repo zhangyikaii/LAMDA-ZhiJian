@@ -20,11 +20,11 @@
         A Unifying and Rapidly Deployable Toolbox for Pre-trained Model Reuse
     <p>
     <p>
-        <a href="to be announced at Mon, 21 Aug 2023 00:00:00 GMT">[Paper]</a> [<b>Code</b>] <a href="https://zhijian.readthedocs.io/en/latest/#">[Docs]</a>
+        <a href="https://arxiv.org/abs/2308.09158">[Paper]</a> [<b>Code</b>] <a href="https://zhijian.readthedocs.io/en/latest/#">[Docs]</a>
     <p>
     <p>
         <b>English</b> |
-        <a href="https://github.com/zhangyikaii/LAMDA-ZhiJian/edit/main/README_CN.md">中文</a>
+        <a href="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/README_zh.md">中文</a>
     <p>
 </h4>
 
@@ -56,35 +56,35 @@
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Diff Pruning</strong>, <em>Parameter-Efficient Transfer Learning with Diff Pruning.</em> In: ACL'21. <a href="https://arxiv.org/pdf/2012.07463.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/diff_pruning.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;LoRA</strong>, <em>LoRA: Low-Rank Adaptation of Large Language Models.</em> In: ICLR'22. <a href="https://arxiv.org/pdf/2106.09685.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/lora.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Visual Prompt Tuning / Prefix</strong>, <em>Visual Prompt Tuning.</em> In: ECCV'22. <a href="https://arxiv.org/pdf/2203.12119.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/visual_prompt_tuning.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Scaling &amp; Shifting</strong>, <em>Scaling &amp; Shifting Your Features: A New Baseline for Efficient Model Tuning.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2210.08823.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/scaling_and_shifting.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;AdaptFormer</strong>, <em>AdaptFormer: Adapting Vision Transformers for Scalable Visual Recognition.</em> In: NeurIPS'22. <a href="https://arxiv.org/pdf/2205.13535.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapterformer.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
@@ -98,14 +98,14 @@
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Convpass</strong>, <em>Convolutional Bypasses Are Better Vision Transformer Adapters.</em> In: Tech Report 07-2022. <a href="https://arxiv.org/pdf/2207.07039.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/convpass.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Fact-Tuning</strong>, <em>FacT: Factor-Tuning for Lightweight Adaptation on Vision Transformer.</em> In: AAAI'23. <a href="https://arxiv.org/pdf/2212.03145.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/fact_tuning.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 </details>
@@ -115,28 +115,28 @@
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Knowledge Transfer</strong>, <em>NeC4.5: neural ensemble based C4.5.</em> In: IEEE Trans. Knowl. Data Eng. 2004. <a href="https://ieeexplore.ieee.org/document/1294896">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/knowledge_transfer.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;FitNet</strong>, <em>FitNets: Hints for Thin Deep Nets.</em> In: ICLR'15. <a href="https://arxiv.org/pdf/1412.6550.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/fitnet.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
-  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;LwF</strong>, <em>Learning without Forgetting.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1811.08051.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;LwF</strong>, <em>Learning without Forgetting.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1606.09282.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/learning_without_forgetting.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;FSP</strong>, <em>A Gift from Knowledge Distillation: Fast Optimization, Network Minimization and Transfer Learning.</em> In: CVPR'17. <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Yim_A_Gift_From_CVPR_2017_paper.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/fsp.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
@@ -148,9 +148,9 @@
   </details>
 
   <details>
-  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;RKD</strong>, <em>Relational Knowledge Distillation.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1412.6550.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
+  <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;RKD</strong>, <em>Relational Knowledge Distillation.</em> In: CVPR'19. <a href="https://arxiv.org/pdf/1904.05068.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/rkd.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
@@ -171,7 +171,7 @@
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;REFILLED</strong>, <em>Distilling Cross-Task Knowledge via Relationship Matching.</em> In: CVPR'20. <a href="http://www.lamda.nju.edu.cn/lus/files/CVPR20_ReFilled.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/refilled.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
@@ -185,7 +185,7 @@
   <details>
   <summary style="margin-left: 12px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;L<sup>2</sup> penalty / L<sup>2</sup>-SP</strong>, <em>Explicit Inductive Bias for Transfer Learning with Convolutional Networks.</em> In: ICML'18. <a href="https://arxiv.org/pdf/1802.01483.pdf">[Paper]</a> <a href="https://github.com">[Code]</a></summary>
   <div style="margin-left: 30px;">
-    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/adapter.png?raw=true" alt="WSFG" width="auto" height="300px" />
+    <img src="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/assests/l_2_penalty.png?raw=true" alt="WSFG" width="auto" height="300px" />
   </div>
   </details>
 
@@ -319,7 +319,7 @@
   + Feel free to create a novel approach for reusing pre-trained model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vHQjlaAGhoeiTVAwOrSQCraAlDvWOlh9?usp=sharing)
 + **Concise** things do **big**
   + Only ~5000 lines of the base code, with incorporating method like building *LEGO* blocks
-  + **State-of-the-art** results on [VTAB benchmark](https://google-research.github.io/task_adaptation/) with approximately **10k** experiments [[here]](https://github.com/zhangyikaii/LAMDA-ZhiJian/tree/main/results)
+  + **State-of-the-art** results on VTAB-M benchmark with approximately **10k** experiments [[here]](https://github.com/zhangyikaii/LAMDA-ZhiJian/tree/main/results)
   + Support friendly guideline and comprehensive documentation to custom dataset and pre-trained model [[here]](https://zhijian.readthedocs.io/en/latest/tutorials/get_started.html)
 
 > "ZhiJian" in Chinese means handling complexity with concise and efficient methods. Given the variations in pre-trained models and the deployment overhead of full parameter fine-tuning, ZhiJian represents a solution that is easily reusable, maintains high accuracy, and maximizes the potential of pre-trained models.
@@ -334,18 +334,18 @@
 
 2. Install ZhiJian using pip:
    ```bash
-   $ pip install ZhiJian
+   $ pip install zhijian
    ```
 
    + [Option] Install with the newest version through GitHub:
       ```bash
-      $ pip install git+https://github.com/ZhangYikaii/ZhiJian.git@main --upgrade
+      $ pip install git+https://github.com/ZhangYikaii/LAMDA-ZhiJian.git@main --upgrade
       ```
 
 3. Open your python console and type
    ```python
-   import ZhiJian
-   print(ZhiJian.__version__)
+   import zhijian
+   print(zhijian.__version__)
    ```
    If no error occurs, you have successfully installed ZhiJian.
 
@@ -355,8 +355,6 @@
 ## Documentation
 
 📚 The tutorials and API documentation are hosted on [ZhiJian.readthedocs.io](https://zhijian.readthedocs.io/)
-
-中文文档正在搭建中..
 
 &nbsp;
 
@@ -536,7 +534,16 @@
 ## Citing ZhiJian
 
 ```latex
-@misc{Charles2013,
+@misc{zhang2023zhijian,
+  title={ZhiJian: A Unifying and Rapidly Deployable Toolbox for Pre-trained Model Reuse}, 
+  author={Yi-Kai Zhang and Lu Ren and Chao Yi and Qi-Wei Wang and De-Chuan Zhan and Han-Jia Ye},
+  year={2023},
+  eprint={2308.09158},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+
+@misc{zhijian2023,
   author = {ZhiJian Contributors},
   title = {LAMDA-ZhiJian},
   year = {2023},
