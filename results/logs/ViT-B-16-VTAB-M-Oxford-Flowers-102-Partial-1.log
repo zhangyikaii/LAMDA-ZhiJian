@@ -1,0 +1,16 @@
+2023-08-20 17:42:39,288 - root - INFO - Log level set to: INFO
+2023-08-20 17:42:39,288 - root - INFO - Log files are recorded in: /data/zhangyk/models/re_kel/0820-17-44-34-543
+2023-08-20 17:42:49,105 - root - INFO - Reuse parameters: [blocks.11.norm1.weight, blocks.11.norm1.bias, blocks.11.attn.qkv.weight, blocks.11.attn.qkv.bias, blocks.11.attn.proj.weight, blocks.11.attn.proj.bias, blocks.11.norm2.weight, blocks.11.norm2.bias, blocks.11.mlp.fc1.weight, blocks.11.mlp.fc1.bias, blocks.11.mlp.fc2.weight, blocks.11.mlp.fc2.bias, head.weight, head.bias]
+2023-08-20 17:43:00,666 - root - INFO - Training with a single process on 1 device (cuda)
+2023-08-20 17:43:01,798 - root - INFO - Dataset: VMT - [train 18000] [test 353942] [num_classes 543]
+2023-08-20 17:43:01,806 - root - INFO - The trainable / total parameters of the model: 7.51M / 86.22M (8.70537%)
+2023-08-20 18:12:18,072 - root - INFO - ***   Epoch 5 results: [Acc@1: 32.01969532611486], [Acc@5: 58.21491076785934]
+2023-08-20 18:42:10,663 - root - INFO - ***   Epoch 10 results: [Acc@1: 35.05238632249039], [Acc@5: 63.737865024602506]
+2023-08-20 19:11:49,540 - root - INFO - ***   Epoch 15 results: [Acc@1: 35.537297459158964], [Acc@5: 65.34116586118354]
+2023-08-20 19:41:30,898 - root - INFO - ***   Epoch 20 results: [Acc@1: 36.72414218077863], [Acc@5: 68.47779756547399]
+2023-08-20 20:11:11,275 - root - INFO - ***   Epoch 25 results: [Acc@1: 36.73746857122503], [Acc@5: 68.74617411929977]
+2023-08-20 20:41:20,036 - root - INFO - ***   Epoch 30 results: [Acc@1: 37.2156523203212], [Acc@5: 68.85481372813943]
+2023-08-20 21:11:38,293 - root - INFO - ***   Epoch 35 results: [Acc@1: 37.258353258851464], [Acc@5: 70.37137748155573]
+2023-08-20 21:41:14,484 - root - INFO - ***   Epoch 40 results: [Acc@1: 37.93707478813563], [Acc@5: 71.0358739233672]
+2023-08-20 22:07:50,055 - root - INFO - ***   Epoch 45 results: [Acc@1: 37.64502399276325], [Acc@5: 71.00655072888686]
+2023-08-20 22:35:43,304 - root - INFO - ***   Epoch 50 results: [Acc@1: 37.70518532681965], [Acc@5: 71.07829241363018]

@@ -1,0 +1,16 @@
+2023-08-20 16:46:07,999 - root - INFO - Log level set to: INFO
+2023-08-20 16:46:07,999 - root - INFO - Log files are recorded in: /data/zhangyk/models/re_kel/0820-16-46-42-667
+2023-08-20 16:46:11,127 - root - INFO - Reuse parameters: [addin.0.prompt_embeddings, addin.0.deep_prompt_embeddings, head.weight, head.bias]
+2023-08-20 16:46:15,915 - root - INFO - Training with a single process on 1 device (cuda)
+2023-08-20 16:46:16,564 - root - INFO - Dataset: VMT - [train 18000] [test 353942] [num_classes 543]
+2023-08-20 16:46:16,568 - root - INFO - The trainable / total parameters of the model: 0.45M / 86.24M (0.51623%)
+2023-08-20 17:04:38,613 - root - INFO - ***   Epoch 5 results: [Acc@1: 32.3304903702036], [Acc@5: 57.59337203328539]
+2023-08-20 17:23:06,784 - root - INFO - ***   Epoch 10 results: [Acc@1: 33.28981072956121], [Acc@5: 60.45572146279865]
+2023-08-20 17:41:33,464 - root - INFO - ***   Epoch 15 results: [Acc@1: 34.60611914967767], [Acc@5: 63.7218938980599]
+2023-08-20 17:59:59,612 - root - INFO - ***   Epoch 20 results: [Acc@1: 35.411608287069306], [Acc@5: 65.60456106581726]
+2023-08-20 18:18:28,520 - root - INFO - ***   Epoch 25 results: [Acc@1: 36.39943017497583], [Acc@5: 67.16418523643642]
+2023-08-20 18:36:52,667 - root - INFO - ***   Epoch 30 results: [Acc@1: 37.31818079103703], [Acc@5: 67.62873447001714]
+2023-08-20 18:55:16,422 - root - INFO - ***   Epoch 35 results: [Acc@1: 37.59446587634966], [Acc@5: 69.35885426899875]
+2023-08-20 19:13:41,474 - root - INFO - ***   Epoch 40 results: [Acc@1: 37.996337425165734], [Acc@5: 69.41996565437455]
+2023-08-20 19:32:06,324 - root - INFO - ***   Epoch 45 results: [Acc@1: 38.079325658725125], [Acc@5: 69.98622169411881]
+2023-08-20 19:50:31,521 - root - INFO - ***   Epoch 50 results: [Acc@1: 38.20958534635156], [Acc@5: 70.01305421400312]

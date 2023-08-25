@@ -1,0 +1,16 @@
+2023-08-19 18:21:28,096 - root - INFO - Log level set to: INFO
+2023-08-19 18:21:28,096 - root - INFO - Log files are recorded in: /data/zhangyk/models/re_kel/0819-18-21-26-479
+2023-08-19 18:21:44,803 - root - INFO - Reuse parameters: [addin.0.lora_a.weight, addin.0.lora_b.weight, addin.1.lora_a.weight, addin.1.lora_b.weight, addin.2.lora_a.weight, addin.2.lora_b.weight, addin.3.lora_a.weight, addin.3.lora_b.weight, addin.4.lora_a.weight, addin.4.lora_b.weight, addin.5.lora_a.weight, addin.5.lora_b.weight, addin.6.lora_a.weight, addin.6.lora_b.weight, addin.7.lora_a.weight, addin.7.lora_b.weight, addin.8.lora_a.weight, addin.8.lora_b.weight, addin.9.lora_a.weight, addin.9.lora_b.weight, addin.10.lora_a.weight, addin.10.lora_b.weight, addin.11.lora_a.weight, addin.11.lora_b.weight, head.weight, head.bias]
+2023-08-19 18:21:48,331 - root - INFO - Training with a single process on 1 device (cuda)
+2023-08-19 18:21:48,865 - root - INFO - Dataset: VMT - [train 18000] [test 353942] [num_classes 543]
+2023-08-19 18:21:48,869 - root - INFO - The trainable / total parameters of the model: 0.71M / 86.51M (0.82357%)
+2023-08-19 18:34:34,325 - root - INFO - ***   Epoch 5 results: [Acc@1: 32.92088283875328], [Acc@5: 59.61664673976939]
+2023-08-19 18:47:55,811 - root - INFO - ***   Epoch 10 results: [Acc@1: 37.80666103831944], [Acc@5: 67.71893795451994]
+2023-08-19 18:59:26,523 - root - INFO - ***   Epoch 15 results: [Acc@1: 37.6902669591483], [Acc@5: 69.94721825159036]
+2023-08-19 19:11:37,189 - root - INFO - ***   Epoch 20 results: [Acc@1: 39.8373307368071], [Acc@5: 71.75192988651521]
+2023-08-19 19:23:46,933 - root - INFO - ***   Epoch 25 results: [Acc@1: 40.84754301444914], [Acc@5: 73.61695691906536]
+2023-08-19 19:35:57,399 - root - INFO - ***   Epoch 30 results: [Acc@1: 41.1585177975294], [Acc@5: 73.95830765653156]
+2023-08-19 19:47:28,929 - root - INFO - ***   Epoch 35 results: [Acc@1: 40.923855214039655], [Acc@5: 74.68188699707119]
+2023-08-19 20:00:47,085 - root - INFO - ***   Epoch 40 results: [Acc@1: 41.66522875197625], [Acc@5: 74.90671526894394]
+2023-08-19 20:14:26,298 - root - INFO - ***   Epoch 45 results: [Acc@1: 41.74916703616547], [Acc@5: 75.05302311420786]
+2023-08-19 20:26:01,958 - root - INFO - ***   Epoch 50 results: [Acc@1: 41.653417307315145], [Acc@5: 75.01828206214712]
