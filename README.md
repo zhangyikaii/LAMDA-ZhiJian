@@ -523,6 +523,8 @@
 
 **ZhiJian** fixed the random seed to ensure reproducibility of the results, with only minor variations across different devices.
 
+<a href="./results/configs/test.json">71.52</a>
+
 &nbsp;
 
 ## Contributing
