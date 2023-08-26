@@ -319,7 +319,7 @@
   + Feel free to create a novel approach for reusing pre-trained model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vHQjlaAGhoeiTVAwOrSQCraAlDvWOlh9?usp=sharing)
 + **Concise** things do **big**
   + Only ~5000 lines of the base code, with incorporating method like building *LEGO* blocks
-  + **State-of-the-art** results on VTAB-M benchmark with approximately **10k** experiments [[here]](https://github.com/zhangyikaii/LAMDA-ZhiJian/tree/main/results)
+  + **State-of-the-art** results on VTAB of Multi-Reuse Tasks Challenge with approximately **10k** experiments [[here]](https://github.com/zhangyikaii/LAMDA-ZhiJian/tree/main/results)
   + Support friendly guideline and comprehensive documentation to custom dataset and pre-trained model [[here]](https://zhijian.readthedocs.io/en/latest/tutorials/get_started.html)
 
 > "ZhiJian" in Chinese means handling complexity with concise and efficient methods. Given the variations in pre-trained models and the deployment overhead of full parameter fine-tuning, ZhiJian represents a solution that is easily reusable, maintains high accuracy, and maximizes the potential of pre-trained models.
@@ -522,6 +522,14 @@
 ### 📦 Reproducible SoTA Results
 
 **ZhiJian** fixed the random seed to ensure reproducibility of the results, with only minor variations across different devices.
+
+#### VTAB of Multi-Reuse-Tasks Challenge
+
+We develop a robust classification challenge called **VTAB-M (Visual Task Adaptation Benchmark for Multi-Reuse-Tasks)**, building upon the VTAB. **This challenge involves tackling a diverse set of 18 visual tasks concurrently, while harnessing the power of pre-trained knowledge.** The primary objective is to equip models with versatile capabilities that span across natural, specialized, and structured visual domains.
+
+The challenge incorporates datasets including *CIFAR-100, CLEVR-Count, CLEVR-Distance, Caltech101, DTD, Diabetic-Retinopathy, Dmlab, EuroSAT, KITTI, Oxford-Flowers-102, Oxford-IIIT-Pet, PatchCamelyon, RESISC45, SVHN, dSprites-Location, dSprites-Orientation, smallNORB-Azimuth, and smallNORB-Elevation.* Following the VTAB-1k standards, we sample a training set consisting of 1,000 samples from each dataset. The comprehensive model evaluation is conducted using the entire test data. VTAB-M serves as a comprehensive evaluation framework that assessing models' **generalization** and **adaptation** across diverse visual tasks. It pushes the pre-trained models to become more **versatile** and **proficient** through reuse methods.
+
+[More results](https://github.com/zhangyikaii/LAMDA-ZhiJian/tree/main/results) will be released gradually in upcoming updates. Please stay tuned for more information.
 
 
 | Method | Tuned Params | Mixed Mean | Caltech101 | CIFAR-100 | CLEVR-Count | CLEVR-Distance | Diabetic-Retinopathy | Dmlab | dSprites-Location | dSprites-Orientation | DTD | EuroSAT | KITTI | Oxford-Flowers-102 | Oxford-IIIT-Pet | PatchCamelyon | RESISC45 | smallNORB-Azimuth | smallNORB-Elevation | SVHN |
