@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/PYTORCH-1.4+-red?style=for-the-badge&logo=pytorch" alt="PyTorch - Version", height="21">
     <img src="https://img.shields.io/badge/PYTHON-3.7+-red?style=for-the-badge&logo=python&logoColor=white" alt="Python - Version", height="21">
 </div>
-<h4 align="center">
+<div align="center">
     <p>
         A Unifying and Rapidly Deployable Toolbox for Pre-trained Model Reuse
     <p>
@@ -26,7 +26,7 @@
         <b>English</b> |
         <a href="https://github.com/zhangyikaii/LAMDA-ZhiJian/blob/main/README_zh.md">中文</a>
     <p>
-</h4>
+</div>
 
 
 **ZhiJian** ([**执简**驭繁](https://baike.baidu.com/item/%E6%89%A7%E7%AE%80%E9%A9%AD%E7%B9%81)) is a *comprehensive* and *user-friendly* `PyTorch`-based **Model Reuse toolbox** for leveraging **foundation pre-trained models** and their **fine-tuned counterparts** to *extract* knowledge and *expedite* learning in real-world tasks.
