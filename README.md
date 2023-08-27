@@ -349,6 +349,53 @@
    ```
    If no error occurs, you have successfully installed ZhiJian.
 
+4. Try a demo that reuses pre-trained ViT-B/16 on target CIFAR-100 dataset with LoRA
+   ```python
+   from zhijian.trainers.base import get_args, prepare_trainer
+   
+   args = get_args(
+       dataset='VTAB-1k.CIFAR-100',  # dataset
+       dataset_dir='your/dataset/directory',  # dataset directory
+       model='timm.vit_base_patch16_224_in21k',  # backbone network
+       config_blitz='(LoRA.adapt): ...->(blocks[0:12].attn.qkv){inout1}->...',  # addin blitz configuration
+       training_mode='finetune',  # training mode
+       optimizer='adam',  # optimizer
+       lr=1e-2,  # learning rate
+       wd=1e-5,  # weight decay
+       gpu='0',  # gpu id
+       verbose=True  # control the verbosity of the output
+   )
+   
+   import torch, os
+   os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
+   torch.cuda.set_device(int(args.gpu))
+   
+   # Pre-trained Model
+   from zhijian.trainers.finetune import get_model
+   model, model_args, device = get_model(args)
+   
+   # Target Dataset
+   from zhijian.data.base import prepare_vision_dataloader
+   train_loader, val_loader, num_classes = prepare_vision_dataloader(args, model_args)
+   
+   # Optimizer
+   import torch.optim as optim
+   optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.wd)
+   lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, args.max_epoch, eta_min=args.eta_min)
+   criterion = torch.nn.CrossEntropyLoss()
+   
+   # Trainer
+   trainer = prepare_trainer(
+       args,
+       model=model, model_args=model_args, device=device,
+       train_loader=train_loader, val_loader=val_loader, num_classes=num_classes,
+       optimizer=optimizer, lr_scheduler=lr_scheduler, criterion=criterion
+   )
+   
+   trainer.fit()
+   trainer.test()
+   ```
+   For more information, please click the [tutorials](https://zhijian.readthedocs.io/en/latest/tutorials/get_started.html).
 
 &nbsp;
 
