@@ -19,6 +19,7 @@ setup(
         'torchvision',
         'tqdm',
         'transformers',
+        'timm',
     ],
     python_requires='>=3.7',
 )

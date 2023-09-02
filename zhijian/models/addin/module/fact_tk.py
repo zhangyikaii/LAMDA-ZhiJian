@@ -53,6 +53,7 @@ class FacT_tk(AddinBase):
             FacTc = self.FacTc @ self.FacTp[:, 12 * idx : 12 * idx + 4]
             proj_FacTc = FacTc[:, :, 3]
             outputs += self.FacTv(self.dp(self.FacTu(x) @ proj_FacTc)) * self.s
+            return outputs
         return core
 
     def get_adapt_mlp_1(self, idx):
